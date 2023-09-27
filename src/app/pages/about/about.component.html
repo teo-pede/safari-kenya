@@ -1,0 +1,156 @@
+<section class="bg-orange-100 dark:bg-gray-800">
+    <h2 class="animate-fade-in-right md:absolute text-center py-10 relative md:top-2/3 md:left-1/2 md:transform z-10 mb-4 text-5xl tracking-widest font-bold leading-none text-gray-900 lg:text-6xl dark:text-white">CHI SONO</h2>
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 px-12 md:py-24">
+        <div class="pb-12">
+            <figure class="z-1 relative transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0">
+                <a>
+                  <img class="max-w-lg object-contain w-auto mx-auto rounded-lg" src="/assets/img/profile.jpg" alt="Elio">
+                </a>
+            </figure>
+        </div>
+        <div class="z-10 pl-6 pr-6 pb-12 md:pt-40">
+            <p class="mb-2 text-gray-800 dark:text-gray-400">
+                👋 <strong>Ciao</strong> ragazzi! Michiamo Elijah ma sono conosciuto col nome d'arte <strong>ELIO</strong>. <br>
+                Vivo e lavoro a <a href="#" class="text-amber-600 underline hover:no-underline" data-popover-target="popover-image">Watamu</a> come guida turistica, con regolare licenza, e dopo tutti questi anni ho 
+                maturato una grande esperienza nell'organizzare safari e escursioni per permettere ai miei clienti di sperimentare le meraviglie che il mio paese ha da offrire.
+            </p>
+            <p class="mb-2 text-gray-800 dark:text-gray-400">
+                Ovviamente si tratta di un lavoro oneroso per una sola persona, ed è per questo che nel tempo ho formato un 
+                <strong>team di persone locali affidabili e professionali</strong> con cui collaboro e a cui mi appoggio per 
+                organizzare al meglio le vostre esperienze qui in Kenya.
+            </p>
+            <p class="text-gray-800 dark:text-gray-400">
+                Il nostro obbiettivo è di fornirvi il miglior servizio possibile per poter vivere al meglio e appieno l'intera 
+                vostra permanenza, e spesso questo rapporto si trasforma in un amicizia che continua nel tempo🥳.
+            </p>
+            <div data-popover id="popover-image" role="tooltip" class="absolute z-10 invisible inline-block text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 w-96 dark:text-gray-400 dark:bg-gray-800 dark:border-gray-600">
+                <div class="grid grid-cols-5">
+                    <div class="col-span-3 p-3">
+                        <div class="space-y-2">
+                            <h3 class="font-semibold text-gray-900 dark:text-white">Watamu</h3>
+                            <p>Watamu è una piccola città costiera del Kenya, a nord di Mombasa, nota per il Watamu Marine National Park and Reserve, che comprende tre baie: Watamu, Blue Lagoon e Turtle. Le spiagge di sabbia e i giardini di corallo sono elementi caratteristici del luogo.</p>
+                            <a href="https://it.wikipedia.org/wiki/Watamu" class="flex items-center font-medium text-amber-600 hover:underline">Read more 
+                                <svg class="w-2 h-2 ml-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <img src="/assets/img/watamu_map.png" class="h-full col-span-2" alt="Watamu map" />
+                </div>
+                <div data-popper-arrow></div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="bg-lime-100 dark:bg-sky-950 bg-no-repeat bg-[url('/assets/img/friends_bg.png')] bg-center">
+    <div class="pl-12 py-12 pr-12">
+        <h2 class="font-potato text-center relative text-5xl tracking-widest leading-none text-amber-800 dark:text-amber-700">UNISCITI AI MIEI AMICI</h2>
+        <div class="relative text-center py-12">
+            <div #friendCountDiv id="friends-num" class="border-8 border-amber-700 dark:border-amber-800 w-28 h-28 rounded-full inline-flex items-center justify-center dark:bg-amber-700 bg-amber-800 font-potato text-3xl dark:text-gray-900 text-white">
+                {{ friendCount + "+" }}
+            </div>
+            <div class="-rotate-12 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] px-16 pt-12 font-potato text-3xl text-gray-900 dark:text-white inline-flex">
+                Sono centinaia <br>i clienti soddisfatti 
+            </div>
+        </div>
+        <div id="default-carousel" class="relative items-center w-full lg:w-2/3 lg:left-1/2 lg:transform lg:-translate-x-1/2" data-carousel="slide">
+            <div class="relative h-60 overflow-hidden rounded-lg sm:h-96 lg:h-[32rem]">
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="/assets/img/friends/friend_1.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                </div>
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="/assets/img/friends/friend_2.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                </div>
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="/assets/img/friends/friend_3.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                </div>
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="/assets/img/friends/friend_4.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                </div>
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="/assets/img/friends/friend_5.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                </div>
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="/assets/img/friends/friend_6.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                </div>
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="/assets/img/friends/friend_7.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                </div>
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="/assets/img/friends/friend_8.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                </div>
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="/assets/img/friends/friend_9.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                </div>
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="/assets/img/friends/friend_10.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                </div>
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="/assets/img/friends/friend_11.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                </div>
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="/assets/img/friends/friend_12.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                </div>
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="/assets/img/friends/friend_13.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                </div>
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="/assets/img/friends/friend_14.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                </div>
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="/assets/img/friends/friend_15.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                </div>
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="/assets/img/friends/friend_16.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                </div>
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="/assets/img/friends/friend_17.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                </div>
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="/assets/img/friends/friend_18.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                </div>
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="/assets/img/friends/friend_19.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                </div>
+            </div>
+            <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 6" data-carousel-slide-to="5"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 7" data-carousel-slide-to="6"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 8" data-carousel-slide-to="7"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 9" data-carousel-slide-to="8"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 10" data-carousel-slide-to="9"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 11" data-carousel-slide-to="10"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 12" data-carousel-slide-to="11"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 13" data-carousel-slide-to="12"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 14" data-carousel-slide-to="13"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 15" data-carousel-slide-to="14"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 16" data-carousel-slide-to="15"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 17" data-carousel-slide-to="16"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 18" data-carousel-slide-to="17"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 19" data-carousel-slide-to="18"></button>
+            </div>
+            <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                    <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                    </svg>
+                    <span class="sr-only">Previous</span>
+                </span>
+            </button>
+            <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                    <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                    </svg>
+                    <span class="sr-only">Next</span>
+                </span>
+            </button>
+        </div>
+    </div>
+</section>
