@@ -9,11 +9,11 @@
     </p>
     <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 px-12 py-12 max-w-6xl mx-auto">
         <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-900 dark:border-gray-700">
-            <button class="w-full" data-modal-target="safari-blue-modal" data-modal-toggle="safari-blue-modal">
+            <button class="w-full" (click)="openModal('safarBlueModal')">
                 <img class="h-72 sm:h-80 object-none w-full rounded-t-lg hover:scale-110 transition duration-500" src="/assets/img/excursions/safari_blue/safari_blue_5.jpg" alt="" />
             </button>
             <div class="p-5">
-                <button data-modal-target="safari-blue-modal" data-modal-toggle="safari-blue-modal" class="text-left">
+                <button (click)="openModal('safarBlueModal')" class="text-left">
                     <h5 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">SAFARI BLUE GARODA</h5>
                     <h6 class="mb-2 text-lg font-bold tracking-tight text-gray-700 dark:text-gray-300">giornata intera</h6>
                 </button>
@@ -28,7 +28,7 @@
                 <div class="flex justify-items-end">
                     <span class="items-center inline-flex text-md font-semibold text-gray-900 dark:text-white ml-0 mr-1">da </span>
                     <span class="items-center inline-flex text-xl font-bold text-amber-600 text-left ml-0 mr-auto">€60</span>
-                    <button data-modal-target="safari-blue-modal" data-modal-toggle="safari-blue-modal" class="inline-flex items-center px-3 py-2 mr-0 ml-auto text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    <button (click)="openModal('safarBlueModal')" class="inline-flex items-center px-3 py-2 mr-0 ml-auto text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                         Info
                         <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
@@ -37,7 +37,7 @@
                     <div id="safari-blue-modal" tabindex="-1" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
                         <div class="relative w-full max-w-7xl max-h-full">
                             <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                                <button type="button" class="z-40 sticky float-right mr-5 top-5 text-gray-400 hover:bg-gray-400 hover:text-gray-900 rounded-full bg-gray-200 border-4 border-gray-500 text-sm w-10 h-10 inline-flex justify-center items-center dark:hover:bg-gray-500 dark:bg-gray-700 dark:border-gray-300 dark:hover:text-white" data-modal-hide="safari-blue-modal">
+                                <button (click)="closeModal('safarBlueModal')" type="button" class="z-40 sticky float-right mr-5 top-5 text-gray-400 hover:bg-gray-400 hover:text-gray-900 rounded-full bg-gray-200 border-4 border-gray-500 text-sm w-10 h-10 inline-flex justify-center items-center dark:hover:bg-gray-500 dark:bg-gray-700 dark:border-gray-300 dark:hover:text-white">
                                     <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
                                     </svg>
@@ -59,77 +59,77 @@
                                     </div>
                                 </div>
                                 <div class="p-6 bg-orange-100 dark:bg-gray-800 grid grid-cols-1 gap-6 md:grid-cols-2">
-                                    <div id="default-carousel" class="relative items-center h-72 sm:h-96 lg:h-[28rem] px-6" data-carousel="static">
+                                    <div class="relative items-center h-72 sm:h-96 lg:h-[28rem] px-6">
                                         <div class="relative h-72 overflow-hidden rounded-lg sm:h-96 lg:h-[28rem]">
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-safari-blue-item-1">
                                                 <img src="/assets/img/excursions/safari_blue/safari_blue_1.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-safari-blue-item-2">
                                                 <img src="/assets/img/excursions/safari_blue/safari_blue_2.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-safari-blue-item-3">
                                                 <img src="/assets/img/excursions/safari_blue/safari_blue_3.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-safari-blue-item-4">
                                                 <img src="/assets/img/excursions/safari_blue/safari_blue_4.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-safari-blue-item-5">
                                                 <img src="/assets/img/excursions/safari_blue/safari_blue_5.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-safari-blue-item-6">
                                                 <img src="/assets/img/excursions/safari_blue/safari_blue_6.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-safari-blue-item-7">
                                                 <img src="/assets/img/excursions/safari_blue/safari_blue_7.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-safari-blue-item-8">
                                                 <img src="/assets/img/excursions/safari_blue/safari_blue_8.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-safari-blue-item-9">
                                                 <img src="/assets/img/excursions/safari_blue/safari_blue_9.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-safari-blue-item-10">
                                                 <img src="/assets/img/excursions/safari_blue/safari_blue_10.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-safari-blue-item-11">
                                                 <img src="/assets/img/excursions/safari_blue/safari_blue_11.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-safari-blue-item-12">
                                                 <img src="/assets/img/excursions/safari_blue/safari_blue_12.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-safari-blue-item-13">
                                                 <img src="/assets/img/excursions/safari_blue/safari_blue_13.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
                                         </div>
                                         <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 6" data-carousel-slide-to="5"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 7" data-carousel-slide-to="6"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 8" data-carousel-slide-to="7"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 9" data-carousel-slide-to="8"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 10" data-carousel-slide-to="9"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 11" data-carousel-slide-to="10"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 12" data-carousel-slide-to="11"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 13" data-carousel-slide-to="12"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" id="carousel-safari-blue-indicator-1"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" id="carousel-safari-blue-indicator-2"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" id="carousel-safari-blue-indicator-3"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" id="carousel-safari-blue-indicator-4"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" id="carousel-safari-blue-indicator-5"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 6" id="carousel-safari-blue-indicator-6"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 7" id="carousel-safari-blue-indicator-7"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 8" id="carousel-safari-blue-indicator-8"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 9" id="carousel-safari-blue-indicator-9"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 10" id="carousel-safari-blue-indicator-10"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 11" id="carousel-safari-blue-indicator-11"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 12" id="carousel-safari-blue-indicator-12"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 13" id="carousel-safari-blue-indicator-13"></button>
                                         </div>
-                                        <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                                        <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" id="carousel-safari-blue-prev">
                                             <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
                                                 <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
                                                 </svg>
-                                                <span class="sr-only">Previous</span>
+                                                <span class="hidden">Previous</span>
                                             </span>
                                         </button>
-                                        <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                                        <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" id="carousel-safari-blue-next">
                                             <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
                                                 <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
                                                 </svg>
-                                                <span class="sr-only">Next</span>
+                                                <span class="hidden">Next</span>
                                             </span>
                                         </button>
                                     </div>
@@ -198,11 +198,11 @@
         </div>
 
         <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-900 dark:border-gray-700">
-            <button class="w-full" data-modal-target="safari-sard-modal" data-modal-toggle="safari-sard-modal">
+            <button class="w-full" (click)="openModal('safarSardModal')">
                 <img class="h-72 sm:h-80 object-none w-full rounded-t-lg hover:scale-110 transition duration-500" src="/assets/img/excursions/sardegna/sardegna_1.jpg" alt="" />
             </button>
             <div class="p-5">
-                <button data-modal-target="safari-sard-modal" data-modal-toggle="safari-sard-modal" class="text-left">
+                <button (click)="openModal('safarSardModal')" class="text-left">
                     <h5 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">SAFARI BLUE SARDEGNA 2</h5>
                     <h6 class="mb-2 text-lg font-bold tracking-tight text-gray-700 dark:text-gray-300">giornata intera</h6>
                 </button>
@@ -217,7 +217,7 @@
                 <div class="flex justify-items-end">
                     <span class="items-center inline-flex text-md font-semibold text-gray-900 dark:text-white ml-0 mr-1">da </span>
                     <span class="items-center inline-flex text-xl font-bold text-amber-600 text-left ml-0 mr-auto">€60</span>
-                    <button data-modal-target="safari-sard-modal" data-modal-toggle="safari-sard-modal" class="inline-flex items-center px-3 py-2 mr-0 ml-auto text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    <button (click)="openModal('safarSardModal')" class="inline-flex items-center px-3 py-2 mr-0 ml-auto text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                         Info
                         <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
@@ -226,7 +226,7 @@
                     <div id="safari-sard-modal" tabindex="-1" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
                         <div class="relative w-full max-w-7xl max-h-full">
                             <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                                <button type="button" class="z-40 sticky float-right mr-5 top-5 text-gray-400 hover:bg-gray-400 hover:text-gray-900 rounded-full bg-gray-200 border-4 border-gray-500 text-sm w-10 h-10 inline-flex justify-center items-center dark:hover:bg-gray-500 dark:bg-gray-700 dark:border-gray-300 dark:hover:text-white" data-modal-hide="safari-sard-modal">
+                                <button type="button" class="z-40 sticky float-right mr-5 top-5 text-gray-400 hover:bg-gray-400 hover:text-gray-900 rounded-full bg-gray-200 border-4 border-gray-500 text-sm w-10 h-10 inline-flex justify-center items-center dark:hover:bg-gray-500 dark:bg-gray-700 dark:border-gray-300 dark:hover:text-white" (click)="closeModal('safarSardModal')">
                                     <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
                                     </svg>
@@ -248,57 +248,57 @@
                                     </div>
                                 </div>
                                 <div class="p-6 bg-orange-100 dark:bg-gray-800 grid grid-cols-1 gap-6 md:grid-cols-2">
-                                    <div id="default-carousel" class="relative items-center h-72 sm:h-96 lg:h-[28rem] px-6" data-carousel="static">
+                                    <div class="relative items-center h-72 sm:h-96 lg:h-[28rem] px-6">
                                         <div class="relative h-72 overflow-hidden rounded-lg sm:h-96 lg:h-[28rem]">
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-sardegna-item-1">
                                                 <img src="/assets/img/excursions/sardegna/sardegna_1.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-sardegna-item-2">
                                                 <img src="/assets/img/excursions/sardegna/sardegna_2.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-sardegna-item-3">
                                                 <img src="/assets/img/excursions/sardegna/sardegna_3.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-sardegna-item-4">
                                                 <img src="/assets/img/excursions/sardegna/sardegna_4.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-sardegna-item-5">
                                                 <img src="/assets/img/excursions/sardegna/sardegna_5.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-sardegna-item-6">
                                                 <img src="/assets/img/excursions/sardegna/sardegna_6.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-sardegna-item-7">
                                                 <img src="/assets/img/excursions/sardegna/sardegna_7.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-sardegna-item-8">
                                                 <img src="/assets/img/excursions/sardegna/sardegna_8.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
                                         </div>
                                         <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 6" data-carousel-slide-to="5"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 7" data-carousel-slide-to="6"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 8" data-carousel-slide-to="7"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" id="carousel-sardegna-indicator-1"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" id="carousel-sardegna-indicator-2"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" id="carousel-sardegna-indicator-3"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" id="carousel-sardegna-indicator-4"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" id="carousel-sardegna-indicator-5"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 6" id="carousel-sardegna-indicator-6"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 7" id="carousel-sardegna-indicator-7"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 8" id="carousel-sardegna-indicator-8"></button>
                                         </div>
-                                        <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                                        <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" id="carousel-sardegna-prev">
                                             <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
                                                 <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
                                                 </svg>
-                                                <span class="sr-only">Previous</span>
+                                                <span class="hidden">Previous</span>
                                             </span>
                                         </button>
-                                        <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                                        <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" id="carousel-sardegna-next">
                                             <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
                                                 <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
                                                 </svg>
-                                                <span class="sr-only">Next</span>
+                                                <span class="hidden">Next</span>
                                             </span>
                                         </button>
                                     </div>
@@ -367,11 +367,11 @@
         </div>
 
         <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-900 dark:border-gray-700">
-            <button class="w-full" data-modal-target="gold-beach-modal" data-modal-toggle="gold-beach-modal">
+            <button class="w-full" (click)="openModal('goldBeachModal')">
                 <img class="h-72 sm:h-80 object-none w-full rounded-t-lg hover:scale-110 transition duration-500" src="/assets/img/excursions/golden_beach/gold_5.jpg" alt="" />
             </button>
             <div class="p-5">
-                <button data-modal-target="gold-beach-modal" data-modal-toggle="gold-beach-modal" class="text-left">
+                <button (click)="openModal('goldBeachModal')" class="text-left">
                     <h5 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">SPIAGGIA DORATA - CHE SHALE</h5>
                     <h6 class="mb-2 text-lg font-bold tracking-tight text-gray-700 dark:text-gray-300">mezza giornata</h6>
                 </button>
@@ -386,7 +386,7 @@
                 <div class="flex justify-items-end">
                     <span class="items-center inline-flex text-md font-semibold text-gray-900 dark:text-white ml-0 mr-1">da </span>
                     <span class="items-center inline-flex text-xl font-bold text-amber-600 text-left ml-0 mr-auto">€30</span>
-                    <button data-modal-target="gold-beach-modal" data-modal-toggle="gold-beach-modal" class="inline-flex items-center px-3 py-2 mr-0 ml-auto text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    <button (click)="openModal('goldBeachModal')" class="inline-flex items-center px-3 py-2 mr-0 ml-auto text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                         Info
                         <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
@@ -395,7 +395,7 @@
                     <div id="gold-beach-modal" tabindex="-1" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
                         <div class="relative w-full max-w-7xl max-h-full">
                             <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                                <button type="button" class="z-40 sticky float-right mr-5 top-5 text-gray-400 hover:bg-gray-400 hover:text-gray-900 rounded-full bg-gray-200 border-4 border-gray-500 text-sm w-10 h-10 inline-flex justify-center items-center dark:hover:bg-gray-500 dark:bg-gray-700 dark:border-gray-300 dark:hover:text-white" data-modal-hide="gold-beach-modal">
+                                <button type="button" class="z-40 sticky float-right mr-5 top-5 text-gray-400 hover:bg-gray-400 hover:text-gray-900 rounded-full bg-gray-200 border-4 border-gray-500 text-sm w-10 h-10 inline-flex justify-center items-center dark:hover:bg-gray-500 dark:bg-gray-700 dark:border-gray-300 dark:hover:text-white" (click)="closeModal('goldBeachModal')">
                                     <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
                                     </svg>
@@ -417,53 +417,53 @@
                                     </div>
                                 </div>
                                 <div class="p-6 bg-orange-100 dark:bg-gray-800 grid grid-cols-1 gap-6 md:grid-cols-2">
-                                    <div id="default-carousel" class="relative items-center h-72 sm:h-96 lg:h-[28rem] px-6" data-carousel="static">
+                                    <div class="relative items-center h-72 sm:h-96 lg:h-[28rem] px-6">
                                         <div class="relative h-72 overflow-hidden rounded-lg sm:h-96 lg:h-[28rem]">
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-golden-beach-item-1">
                                                 <img src="/assets/img/excursions/golden_beach/gold_1.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-golden-beach-item-2">
                                                 <img src="/assets/img/excursions/golden_beach/gold_2.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-golden-beach-item-3">
                                                 <img src="/assets/img/excursions/golden_beach/gold_3.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-golden-beach-item-4">
                                                 <img src="/assets/img/excursions/golden_beach/gold_4.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-golden-beach-item-5">
                                                 <img src="/assets/img/excursions/golden_beach/gold_5.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-golden-beach-item-6">
                                                 <img src="/assets/img/excursions/golden_beach/gold_6.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-golden-beach-item-7">
                                                 <img src="/assets/img/excursions/golden_beach/gold_7.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
                                         </div>
                                         <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 6" data-carousel-slide-to="5"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 7" data-carousel-slide-to="6"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" id="carousel-golden-beach-indicator-1"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" id="carousel-golden-beach-indicator-2"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" id="carousel-golden-beach-indicator-3"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" id="carousel-golden-beach-indicator-4"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" id="carousel-golden-beach-indicator-5"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 6" id="carousel-golden-beach-indicator-6"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 7" id="carousel-golden-beach-indicator-7"></button>
                                         </div>
-                                        <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                                        <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" id="carousel-golden-beach-prev">
                                             <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
                                                 <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
                                                 </svg>
-                                                <span class="sr-only">Previous</span>
+                                                <span class="hidden">Previous</span>
                                             </span>
                                         </button>
-                                        <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                                        <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" id="carousel-golden-beach-next">
                                             <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
                                                 <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
                                                 </svg>
-                                                <span class="sr-only">Next</span>
+                                                <span class="hidden">Next</span>
                                             </span>
                                         </button>
                                     </div>
@@ -516,11 +516,11 @@
         </div>
 
         <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-900 dark:border-gray-700">
-            <button class="w-full" data-modal-target="mgr-modal" data-modal-toggle="mgr-modal">
+            <button class="w-full" (click)="openModal('mgrModal')">
                 <img class="h-72 sm:h-80 object-none w-full rounded-t-lg hover:scale-110 transition duration-500" src="/assets/img/excursions/marafa_gold_robinson/mgr_7.jpg" alt="" />
             </button>
             <div class="p-5">
-                <button data-modal-target="mgr-modal" data-modal-toggle="mgr-modal" class="text-left">
+                <button (click)="openModal('mgrModal')" class="text-left">
                     <h5 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">SPIAGGIA DORATA - ISOLA DI ROBINSON - MARAFA</h5>
                     <h6 class="mb-2 text-lg font-bold tracking-tight text-gray-700 dark:text-gray-300">giornata intera</h6>
                 </button>
@@ -535,7 +535,7 @@
                 <div class="flex justify-items-end">
                     <span class="items-center inline-flex text-md font-semibold text-gray-900 dark:text-white ml-0 mr-1">da </span>
                     <span class="items-center inline-flex text-xl font-bold text-amber-600 text-left ml-0 mr-auto">€70</span>
-                    <button data-modal-target="mgr-modal" data-modal-toggle="mgr-modal" class="inline-flex items-center px-3 py-2 mr-0 ml-auto text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    <button (click)="openModal('mgrModal')" class="inline-flex items-center px-3 py-2 mr-0 ml-auto text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                         Info
                         <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
@@ -544,7 +544,7 @@
                     <div id="mgr-modal" tabindex="-1" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
                         <div class="relative w-full max-w-7xl max-h-full">
                             <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                                <button type="button" class="z-40 sticky float-right mr-5 top-5 text-gray-400 hover:bg-gray-400 hover:text-gray-900 rounded-full bg-gray-200 border-4 border-gray-500 text-sm w-10 h-10 inline-flex justify-center items-center dark:hover:bg-gray-500 dark:bg-gray-700 dark:border-gray-300 dark:hover:text-white" data-modal-hide="mgr-modal">
+                                <button type="button" class="z-40 sticky float-right mr-5 top-5 text-gray-400 hover:bg-gray-400 hover:text-gray-900 rounded-full bg-gray-200 border-4 border-gray-500 text-sm w-10 h-10 inline-flex justify-center items-center dark:hover:bg-gray-500 dark:bg-gray-700 dark:border-gray-300 dark:hover:text-white" (click)="closeModal('mgrModal')">
                                     <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
                                     </svg>
@@ -566,49 +566,49 @@
                                     </div>
                                 </div>
                                 <div class="p-6 bg-orange-100 dark:bg-gray-800 grid grid-cols-1 gap-6 md:grid-cols-2">
-                                    <div id="default-carousel" class="relative items-center h-72 sm:h-96 lg:h-[28rem] px-6" data-carousel="static">
+                                    <div class="relative items-center h-72 sm:h-96 lg:h-[28rem] px-6">
                                         <div class="relative h-72 overflow-hidden rounded-lg sm:h-96 lg:h-[28rem]">
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-mgr-item-1">
                                                 <img src="/assets/img/excursions/marafa_gold_robinson/mgr_1.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-mgr-item-2">
                                                 <img src="/assets/img/excursions/marafa_gold_robinson/mgr_2.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-mgr-item-3">
                                                 <img src="/assets/img/excursions/marafa_gold_robinson/mgr_3.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-mgr-item-4">
                                                 <img src="/assets/img/excursions/marafa_gold_robinson/mgr_4.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-mgr-item-5">
                                                 <img src="/assets/img/excursions/marafa_gold_robinson/mgr_5.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-mgr-item-6">
                                                 <img src="/assets/img/excursions/marafa_gold_robinson/mgr_6.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
                                         </div>
                                         <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 6" data-carousel-slide-to="5"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" id="carousel-mgr-indicator-1"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" id="carousel-mgr-indicator-2"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" id="carousel-mgr-indicator-3"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" id="carousel-mgr-indicator-4"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" id="carousel-mgr-indicator-5"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 6" id="carousel-mgr-indicator-6"></button>
                                         </div>
-                                        <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                                        <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" id="carousel-mgr-prev">
                                             <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
                                                 <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
                                                 </svg>
-                                                <span class="sr-only">Previous</span>
+                                                <span class="hidden">Previous</span>
                                             </span>
                                         </button>
-                                        <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                                        <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" id="carousel-mgr-next">
                                             <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
                                                 <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
                                                 </svg>
-                                                <span class="sr-only">Next</span>
+                                                <span class="hidden">Next</span>
                                             </span>
                                         </button>
                                     </div>
@@ -687,11 +687,11 @@
         </div>
 
         <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-900 dark:border-gray-700">
-            <button class="w-full" data-modal-target="marafa-modal" data-modal-toggle="marafa-modal">
+            <button class="w-full" (click)="openModal('marafaModal')">
                 <img class="h-72 sm:h-80 object-none w-full rounded-t-lg hover:scale-110 transition duration-500" src="/assets/img/excursions/marafa/marafa_1.jpeg" alt="" />
             </button>
             <div class="p-5">
-                <button data-modal-target="marafa-modal" data-modal-toggle="marafa-modal" class="text-left">
+                <button (click)="openModal('marafaModal')" class="text-left">
                     <h5 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">MARAFA - HELLS KITCHEN</h5>
                     <h6 class="mb-2 text-lg font-bold tracking-tight text-gray-700 dark:text-gray-300">mezza giornata</h6>
                 </button>
@@ -706,7 +706,7 @@
                 <div class="flex justify-items-end">
                     <span class="items-center inline-flex text-md font-semibold text-gray-900 dark:text-white ml-0 mr-1">da </span>
                     <span class="items-center inline-flex text-xl font-bold text-amber-600 text-left ml-0 mr-auto">€35</span>
-                    <button data-modal-target="marafa-modal" data-modal-toggle="marafa-modal" class="inline-flex items-center px-3 py-2 mr-0 ml-auto text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    <button (click)="openModal('marafaModal')" class="inline-flex items-center px-3 py-2 mr-0 ml-auto text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                         Info
                         <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
@@ -715,7 +715,7 @@
                     <div id="marafa-modal" tabindex="-1" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
                         <div class="relative w-full max-w-7xl max-h-full">
                             <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                                <button type="button" class="z-40 sticky float-right mr-5 top-5 text-gray-400 hover:bg-gray-400 hover:text-gray-900 rounded-full bg-gray-200 border-4 border-gray-500 text-sm w-10 h-10 inline-flex justify-center items-center dark:hover:bg-gray-500 dark:bg-gray-700 dark:border-gray-300 dark:hover:text-white" data-modal-hide="marafa-modal">
+                                <button type="button" class="z-40 sticky float-right mr-5 top-5 text-gray-400 hover:bg-gray-400 hover:text-gray-900 rounded-full bg-gray-200 border-4 border-gray-500 text-sm w-10 h-10 inline-flex justify-center items-center dark:hover:bg-gray-500 dark:bg-gray-700 dark:border-gray-300 dark:hover:text-white" (click)="closeModal('marafaModal')">
                                     <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
                                     </svg>
@@ -737,73 +737,73 @@
                                     </div>
                                 </div>
                                 <div class="p-6 bg-orange-100 dark:bg-gray-800 grid grid-cols-1 gap-6 md:grid-cols-2">
-                                    <div id="default-carousel" class="relative items-center h-72 sm:h-96 lg:h-[28rem] px-6" data-carousel="static">
+                                    <div class="relative items-center h-72 sm:h-96 lg:h-[28rem] px-6">
                                         <div class="relative h-72 overflow-hidden rounded-lg sm:h-96 lg:h-[28rem]">
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-marafa-item-1">
                                                 <img src="/assets/img/excursions/marafa/marafa_1.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-marafa-item-2">
                                                 <img src="/assets/img/excursions/marafa/marafa_2.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-marafa-item-3">
                                                 <img src="/assets/img/excursions/marafa/marafa_3.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-marafa-item-4">
                                                 <img src="/assets/img/excursions/marafa/marafa_4.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-marafa-item-5">
                                                 <img src="/assets/img/excursions/marafa/marafa_5.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-marafa-item-6">
                                                 <img src="/assets/img/excursions/marafa/marafa_6.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-marafa-item-7">
                                                 <img src="/assets/img/excursions/marafa/marafa_7.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-marafa-item-8">
                                                 <img src="/assets/img/excursions/marafa/marafa_8.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-marafa-item-9">
                                                 <img src="/assets/img/excursions/marafa/marafa_9.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-marafa-item-10">
                                                 <img src="/assets/img/excursions/marafa/marafa_10.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-marafa-item-11">
                                                 <img src="/assets/img/excursions/marafa/marafa_11.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-marafa-item-12">
                                                 <img src="/assets/img/excursions/marafa/marafa_12.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
                                         </div>
                                         <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 6" data-carousel-slide-to="5"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 7" data-carousel-slide-to="6"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 8" data-carousel-slide-to="7"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 9" data-carousel-slide-to="8"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 10" data-carousel-slide-to="9"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 11" data-carousel-slide-to="10"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 12" data-carousel-slide-to="11"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" id="carousel-marafa-indicator-1"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" id="carousel-marafa-indicator-2"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" id="carousel-marafa-indicator-3"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" id="carousel-marafa-indicator-4"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" id="carousel-marafa-indicator-5"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 6" id="carousel-marafa-indicator-6"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 7" id="carousel-marafa-indicator-7"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 8" id="carousel-marafa-indicator-8"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 9" id="carousel-marafa-indicator-9"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 10" id="carousel-marafa-indicator-10"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 11" id="carousel-marafa-indicator-11"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 12" id="carousel-marafa-indicator-12"></button>
                                         </div>
-                                        <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                                        <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" id="carousel-marafa-prev">
                                             <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
                                                 <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
                                                 </svg>
-                                                <span class="sr-only">Previous</span>
+                                                <span class="hidden">Previous</span>
                                             </span>
                                         </button>
-                                        <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                                        <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" id="carousel-marafa-next">
                                             <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
                                                 <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
                                                 </svg>
-                                                <span class="sr-only">Next</span>
+                                                <span class="hidden">Next</span>
                                             </span>
                                         </button>
                                     </div>
@@ -848,11 +848,11 @@
         </div>
 
         <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-900 dark:border-gray-700">
-            <button class="w-full" data-modal-target="gede-modal" data-modal-toggle="gede-modal">
+            <button class="w-full" (click)="openModal('gedeModal')">
                 <img class="h-72 sm:h-80 object-none w-full rounded-t-lg hover:scale-110 transition duration-500" src="/assets/img/excursions/gede/gede_2.jpg" alt="" />
             </button>
             <div class="p-5 grid grid-cols-1">
-                <button data-modal-target="gede-modal" data-modal-toggle="gede-modal" class="text-left">
+                <button (click)="openModal('gedeModal')" class="text-left">
                     <h5 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">ROVINE DI GEDE</h5>
                     <h6 class="mb-2 text-lg font-bold tracking-tight text-gray-700 dark:text-gray-300">mezza giornata</h6>
                 </button>
@@ -867,7 +867,7 @@
                 <div class="place-items-end flex justify-items-end">
                     <span class="items-center inline-flex text-md font-semibold text-gray-900 dark:text-white ml-0 mr-1">da </span>
                     <span class="items-center inline-flex text-xl font-bold text-amber-600 text-left ml-0 mr-auto">€30</span>
-                    <button data-modal-target="gede-modal" data-modal-toggle="gede-modal" class="inline-flex items-center px-3 py-2 mr-0 ml-auto text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    <button (click)="openModal('gedeModal')" class="inline-flex items-center px-3 py-2 mr-0 ml-auto text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                         Info
                         <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
@@ -876,7 +876,7 @@
                     <div id="gede-modal" tabindex="-1" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
                         <div class="relative w-full max-w-7xl max-h-full">
                             <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                                <button type="button" class="z-40 sticky float-right mr-5 top-5 text-gray-400 hover:bg-gray-400 hover:text-gray-900 rounded-full bg-gray-200 border-4 border-gray-500 text-sm w-10 h-10 inline-flex justify-center items-center dark:hover:bg-gray-500 dark:bg-gray-700 dark:border-gray-300 dark:hover:text-white" data-modal-hide="gede-modal">
+                                <button type="button" class="z-40 sticky float-right mr-5 top-5 text-gray-400 hover:bg-gray-400 hover:text-gray-900 rounded-full bg-gray-200 border-4 border-gray-500 text-sm w-10 h-10 inline-flex justify-center items-center dark:hover:bg-gray-500 dark:bg-gray-700 dark:border-gray-300 dark:hover:text-white" (click)="closeModal('gedeModal')">
                                     <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
                                     </svg>
@@ -898,45 +898,45 @@
                                     </div>
                                 </div>
                                 <div class="p-6 bg-orange-100 dark:bg-gray-800 grid grid-cols-1 gap-6 md:grid-cols-2">
-                                    <div id="default-carousel" class="relative items-center h-72 sm:h-96 lg:h-[28rem] px-6" data-carousel="static">
+                                    <div class="relative items-center h-72 sm:h-96 lg:h-[28rem] px-6">
                                         <div class="relative h-72 overflow-hidden rounded-lg sm:h-96 lg:h-[28rem]">
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-gede-item-1">
                                                 <img src="/assets/img/excursions/gede/gede_1.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-gede-item-2">
                                                 <img src="/assets/img/excursions/gede/gede_2.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-gede-item-3">
                                                 <img src="/assets/img/excursions/gede/gede_3.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-gede-item-4">
                                                 <img src="/assets/img/excursions/gede/gede_4.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-gede-item-5">
                                                 <img src="/assets/img/excursions/gede/gede_5.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
                                         </div>
                                         <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" id="carousel-gede-indicator-1"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" id="carousel-gede-indicator-2"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" id="carousel-gede-indicator-3"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" id="carousel-gede-indicator-4"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" id="carousel-gede-indicator-5"></button>
                                         </div>
-                                        <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                                        <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" id="carousel-gede-prev">
                                             <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
                                                 <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
                                                 </svg>
-                                                <span class="sr-only">Previous</span>
+                                                <span class="hidden">Previous</span>
                                             </span>
                                         </button>
-                                        <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                                        <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" id="carousel-gede-next">
                                             <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
                                                 <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
                                                 </svg>
-                                                <span class="sr-only">Next</span>
+                                                <span class="hidden">Next</span>
                                             </span>
                                         </button>
                                     </div>
@@ -986,11 +986,11 @@
         </div>
 
         <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-900 dark:border-gray-700">
-            <button class="w-full" data-modal-target="malindi-modal" data-modal-toggle="malindi-modal">
+            <button class="w-full" (click)="openModal('malindiModal')">
                 <img class="h-72 sm:h-80 object-none w-full rounded-t-lg hover:scale-110 transition duration-500" src="/assets/img/excursions/malindi/malindi_1.jpg" alt="" />
             </button>
             <div class="p-5">
-                <button data-modal-target="malindi-modal" data-modal-toggle="malindi-modal" class="text-left">
+                <button (click)="openModal('malindiModal')" class="text-left">
                     <h5 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">MALINDI TOUR</h5>
                     <h6 class="mb-2 text-lg font-bold tracking-tight text-gray-700 dark:text-gray-300">mezza giornata</h6>
                 </button>
@@ -1005,7 +1005,7 @@
                 <div class="flex justify-items-end">
                     <span class="items-center inline-flex text-md font-semibold text-gray-900 dark:text-white ml-0 mr-1">da </span>
                     <span class="items-center inline-flex text-xl font-bold text-amber-600 text-left ml-0 mr-auto">€25</span>
-                    <button data-modal-target="malindi-modal" data-modal-toggle="malindi-modal" class="inline-flex items-center px-3 py-2 mr-0 ml-auto text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    <button (click)="openModal('malindiModal')" class="inline-flex items-center px-3 py-2 mr-0 ml-auto text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                         Info
                         <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
@@ -1014,7 +1014,7 @@
                     <div id="malindi-modal" tabindex="-1" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
                         <div class="relative w-full max-w-7xl max-h-full">
                             <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                                <button type="button" class="z-40 sticky float-right mr-5 top-5 text-gray-400 hover:bg-gray-400 hover:text-gray-900 rounded-full bg-gray-200 border-4 border-gray-500 text-sm w-10 h-10 inline-flex justify-center items-center dark:hover:bg-gray-500 dark:bg-gray-700 dark:border-gray-300 dark:hover:text-white" data-modal-hide="malindi-modal">
+                                <button type="button" class="z-40 sticky float-right mr-5 top-5 text-gray-400 hover:bg-gray-400 hover:text-gray-900 rounded-full bg-gray-200 border-4 border-gray-500 text-sm w-10 h-10 inline-flex justify-center items-center dark:hover:bg-gray-500 dark:bg-gray-700 dark:border-gray-300 dark:hover:text-white" (click)="closeModal('malindiModal')">
                                     <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
                                     </svg>
@@ -1036,37 +1036,37 @@
                                     </div>
                                 </div>
                                 <div class="p-6 bg-orange-100 dark:bg-gray-800 grid grid-cols-1 gap-6 md:grid-cols-2">
-                                    <div id="default-carousel" class="relative items-center h-72 sm:h-96 lg:h-[28rem] px-6" data-carousel="static">
+                                    <div class="relative items-center h-72 sm:h-96 lg:h-[28rem] px-6">
                                         <div class="relative h-72 overflow-hidden rounded-lg sm:h-96 lg:h-[28rem]">
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-malindi-item-1">
                                                 <img src="/assets/img/excursions/malindi/malindi_1.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-malindi-item-2">
                                                 <img src="/assets/img/excursions/malindi/malindi_2.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-malindi-item-3">
                                                 <img src="/assets/img/excursions/malindi/malindi_3.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
                                         </div>
                                         <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" id="carousel-malindi-indicator-1"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" id="carousel-malindi-indicator-2"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" id="carousel-malindi-indicator-3"></button>
                                         </div>
-                                        <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                                        <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" id="carousel-malindi-prev">
                                             <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
                                                 <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
                                                 </svg>
-                                                <span class="sr-only">Previous</span>
+                                                <span class="hidden">Previous</span>
                                             </span>
                                         </button>
-                                        <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                                        <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" id="carousel-malindi-next">
                                             <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
                                                 <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
                                                 </svg>
-                                                <span class="sr-only">Next</span>
+                                                <span class="hidden">Next</span>
                                             </span>
                                         </button>
                                     </div>
@@ -1110,11 +1110,11 @@
         </div>
 
         <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-900 dark:border-gray-700">
-            <button class="w-full" data-modal-target="malindi-night-modal" data-modal-toggle="malindi-night-modal">
+            <button class="w-full" (click)="openModal('malindiNightModal')">
                 <img class="h-72 sm:h-80 object-none w-full rounded-t-lg hover:scale-110 transition duration-500" src="/assets/img/excursions/malindi_night/malindi_night_2.jpg" alt="" />
             </button>
             <div class="p-5">
-                <button data-modal-target="malindi-night-modal" data-modal-toggle="malindi-night-modal" class="text-left">
+                <button (click)="openModal('malindiNightModal')" class="text-left">
                     <h5 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">MALINDI BY NIGHT</h5>
                     <h6 class="mb-2 text-lg font-bold tracking-tight text-gray-700 dark:text-gray-300">mezza giornata</h6>
                 </button>
@@ -1129,7 +1129,7 @@
                 <div class="flex justify-items-end">
                     <span class="items-center inline-flex text-md font-semibold text-gray-900 dark:text-white ml-0 mr-1">da </span>
                     <span class="items-center inline-flex text-xl font-bold text-amber-600 text-left ml-0 mr-auto">€25</span>
-                    <button data-modal-target="malindi-night-modal" data-modal-toggle="malindi-night-modal" class="inline-flex items-center px-3 py-2 mr-0 ml-auto text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    <button (click)="openModal('malindiNightModal')" class="inline-flex items-center px-3 py-2 mr-0 ml-auto text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                         Info
                         <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
@@ -1138,7 +1138,7 @@
                     <div id="malindi-night-modal" tabindex="-1" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
                         <div class="relative w-full max-w-7xl max-h-full">
                             <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                                <button type="button" class="z-40 sticky float-right mr-5 top-5 text-gray-400 hover:bg-gray-400 hover:text-gray-900 rounded-full bg-gray-200 border-4 border-gray-500 text-sm w-10 h-10 inline-flex justify-center items-center dark:hover:bg-gray-500 dark:bg-gray-700 dark:border-gray-300 dark:hover:text-white" data-modal-hide="malindi-night-modal">
+                                <button type="button" class="z-40 sticky float-right mr-5 top-5 text-gray-400 hover:bg-gray-400 hover:text-gray-900 rounded-full bg-gray-200 border-4 border-gray-500 text-sm w-10 h-10 inline-flex justify-center items-center dark:hover:bg-gray-500 dark:bg-gray-700 dark:border-gray-300 dark:hover:text-white" (click)="closeModal('malindiNightModal')">
                                     <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
                                     </svg>
@@ -1160,37 +1160,37 @@
                                     </div>
                                 </div>
                                 <div class="p-6 bg-orange-100 dark:bg-gray-800 grid grid-cols-1 gap-6 md:grid-cols-2">
-                                    <div id="default-carousel" class="relative items-center h-72 sm:h-96 lg:h-[28rem] px-6" data-carousel="static">
+                                    <div class="relative items-center h-72 sm:h-96 lg:h-[28rem] px-6">
                                         <div class="relative h-72 overflow-hidden rounded-lg sm:h-96 lg:h-[28rem]">
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-malindi-night-item-1">
                                                 <img src="/assets/img/excursions/malindi_night/malindi_night_1.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-malindi-night-item-2">
                                                 <img src="/assets/img/excursions/malindi_night/malindi_night_2.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-malindi-night-item-3">
                                                 <img src="/assets/img/excursions/malindi_night/malindi_night_3.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
                                         </div>
                                         <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" id="carousel-malindi-night-indicator-1"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" id="carousel-malindi-night-indicator-2"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" id="carousel-malindi-night-indicator-3"></button>
                                         </div>
-                                        <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                                        <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" id="carousel-malindi-night-prev">
                                             <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
                                                 <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
                                                 </svg>
-                                                <span class="sr-only">Previous</span>
+                                                <span class="hidden">Previous</span>
                                             </span>
                                         </button>
-                                        <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                                        <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" id="carousel-malindi-night-next">
                                             <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
                                                 <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
                                                 </svg>
-                                                <span class="sr-only">Next</span>
+                                                <span class="hidden">Next</span>
                                             </span>
                                         </button>
                                     </div>
@@ -1227,11 +1227,11 @@
         </div>
 
         <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-900 dark:border-gray-700">
-            <button class="w-full" data-modal-target="amore-modal" data-modal-toggle="amore-modal">
+            <button class="w-full" (click)="openModal('amoreModal')">
                 <img class="h-72 sm:h-80 object-none w-full rounded-t-lg hover:scale-110 transition duration-500" src="/assets/img/excursions/amore/amore_1.jpg" alt="" />
             </button>
             <div class="p-5">
-                <button data-modal-target="amore-modal" data-modal-toggle="amore-modal" class="text-left">
+                <button (click)="openModal('amoreModal')" class="text-left">
                     <h5 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">ISOLA DELL'AMORE</h5>
                     <h6 class="mb-2 text-lg font-bold tracking-tight text-gray-700 dark:text-gray-300">mezza giornata</h6>
                 </button>
@@ -1246,7 +1246,7 @@
                 <div class="flex justify-items-end">
                     <span class="items-center inline-flex text-md font-semibold text-gray-900 dark:text-white ml-0 mr-1">da </span>
                     <span class="items-center inline-flex text-xl font-bold text-amber-600 text-left ml-0 mr-auto">€30</span>
-                    <button data-modal-target="amore-modal" data-modal-toggle="amore-modal" class="inline-flex items-center px-3 py-2 mr-0 ml-auto text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    <button (click)="openModal('amoreModal')" class="inline-flex items-center px-3 py-2 mr-0 ml-auto text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                         Info
                         <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
@@ -1255,7 +1255,7 @@
                     <div id="amore-modal" tabindex="-1" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
                         <div class="relative w-full max-w-7xl max-h-full">
                             <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                                <button type="button" class="z-40 sticky float-right mr-5 top-5 text-gray-400 hover:bg-gray-400 hover:text-gray-900 rounded-full bg-gray-200 border-4 border-gray-500 text-sm w-10 h-10 inline-flex justify-center items-center dark:hover:bg-gray-500 dark:bg-gray-700 dark:border-gray-300 dark:hover:text-white" data-modal-hide="amore-modal">
+                                <button type="button" class="z-40 sticky float-right mr-5 top-5 text-gray-400 hover:bg-gray-400 hover:text-gray-900 rounded-full bg-gray-200 border-4 border-gray-500 text-sm w-10 h-10 inline-flex justify-center items-center dark:hover:bg-gray-500 dark:bg-gray-700 dark:border-gray-300 dark:hover:text-white" (click)="closeModal('amoreModal')">
                                     <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
                                     </svg>
@@ -1277,32 +1277,32 @@
                                     </div>
                                 </div>
                                 <div class="p-6 bg-orange-100 dark:bg-gray-800 grid grid-cols-1 gap-6 md:grid-cols-2">
-                                    <div id="default-carousel" class="relative items-center h-72 sm:h-96 lg:h-[28rem] px-6" data-carousel="static">
+                                    <div class="relative items-center h-72 sm:h-96 lg:h-[28rem] px-6">
                                         <div class="relative h-72 overflow-hidden rounded-lg sm:h-96 lg:h-[28rem]">
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-amore-item-1">
                                                 <img src="/assets/img/excursions/amore/amore_1.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-amore-item-2">
                                                 <img src="/assets/img/excursions/amore/amore_2.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-amore-item-3">
                                                 <img src="/assets/img/excursions/amore/amore_3.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
                                         </div>
                                         <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" id="carousel-amore-indicator-1"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" id="carousel-amore-indicator-2"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" id="carousel-amore-indicator-3"></button>
                                         </div>
-                                        <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                                        <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" id="carousel-amore-prev">
                                             <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
                                                 <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
                                                 </svg>
-                                                <span class="sr-only">Previous</span>
+                                                <span class="hidden">Previous</span>
                                             </span>
                                         </button>
-                                        <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                                        <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" id="carousel-amore-next">
                                             <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
                                                 <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
@@ -1350,11 +1350,11 @@
         </div>
 
         <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-900 dark:border-gray-700">
-            <button class="w-full" data-modal-target="dabaso-modal" data-modal-toggle="dabaso-modal">
+            <button class="w-full" (click)="openModal('dabasoModal')">
                 <img class="h-72 sm:h-80 object-none w-full rounded-t-lg hover:scale-110 transition duration-500" src="/assets/img/excursions/dabaso/dabaso_3.jpeg" alt="" />
             </button>
             <div class="p-5">
-                <button data-modal-target="dabaso-modal" data-modal-toggle="dabaso-modal" class="text-left">
+                <button (click)="openModal('dabasoModal')" class="text-left">
                     <h5 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">DABASO COMMUNITY</h5>
                     <h6 class="mb-2 text-lg font-bold tracking-tight text-gray-700 dark:text-gray-300">mezza giornata</h6>
                 </button>
@@ -1369,7 +1369,7 @@
                 <div class="flex justify-items-end">
                     <span class="items-center inline-flex text-md font-semibold text-gray-900 dark:text-white ml-0 mr-1">da </span>
                     <span class="items-center inline-flex text-xl font-bold text-amber-600 text-left ml-0 mr-auto">€30</span>
-                    <button data-modal-target="dabaso-modal" data-modal-toggle="dabaso-modal" class="inline-flex items-center px-3 py-2 mr-0 ml-auto text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    <button (click)="openModal('dabasoModal')" class="inline-flex items-center px-3 py-2 mr-0 ml-auto text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                         Info
                         <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
@@ -1378,7 +1378,7 @@
                     <div id="dabaso-modal" tabindex="-1" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
                         <div class="relative w-full max-w-7xl max-h-full">
                             <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                                <button type="button" class="z-40 sticky float-right mr-5 top-5 text-gray-400 hover:bg-gray-400 hover:text-gray-900 rounded-full bg-gray-200 border-4 border-gray-500 text-sm w-10 h-10 inline-flex justify-center items-center dark:hover:bg-gray-500 dark:bg-gray-700 dark:border-gray-300 dark:hover:text-white" data-modal-hide="dabaso-modal">
+                                <button type="button" class="z-40 sticky float-right mr-5 top-5 text-gray-400 hover:bg-gray-400 hover:text-gray-900 rounded-full bg-gray-200 border-4 border-gray-500 text-sm w-10 h-10 inline-flex justify-center items-center dark:hover:bg-gray-500 dark:bg-gray-700 dark:border-gray-300 dark:hover:text-white" (click)="closeModal('dabasoModal')">
                                     <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
                                     </svg>
@@ -1400,41 +1400,41 @@
                                     </div>
                                 </div>
                                 <div class="p-6 bg-orange-100 dark:bg-gray-800 grid grid-cols-1 gap-6 md:grid-cols-2">
-                                    <div id="default-carousel" class="relative items-center h-72 sm:h-96 lg:h-[28rem] px-6" data-carousel="static">
+                                    <div class="relative items-center h-72 sm:h-96 lg:h-[28rem] px-6">
                                         <div class="relative h-72 overflow-hidden rounded-lg sm:h-96 lg:h-[28rem]">
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-dabaso-item-1">
                                                 <img src="/assets/img/excursions/dabaso/dabaso_1.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-dabaso-item-2">
                                                 <img src="/assets/img/excursions/dabaso/dabaso_2.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-dabaso-item-3">
                                                 <img src="/assets/img/excursions/dabaso/dabaso_3.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-dabaso-item-4">
                                                 <img src="/assets/img/excursions/dabaso/dabaso_4.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
                                         </div>
                                         <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" id="carousel-dabaso-indicator-1"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" id="carousel-dabaso-indicator-2"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" id="carousel-dabaso-indicator-3"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" id="carousel-dabaso-indicator-4"></button>
                                         </div>
-                                        <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                                        <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" id="carousel-dabaso-prev">
                                             <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
                                                 <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
                                                 </svg>
-                                                <span class="sr-only">Previous</span>
+                                                <span class="hidden">Previous</span>
                                             </span>
                                         </button>
-                                        <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                                        <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" id="carousel-dabaso-next">
                                             <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
                                                 <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
                                                 </svg>
-                                                <span class="sr-only">Next</span>
+                                                <span class="hidden">Next</span>
                                             </span>
                                         </button>
                                     </div>
@@ -1479,11 +1479,11 @@
         </div>
 
         <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-900 dark:border-gray-700">
-            <button class="w-full" data-modal-target="garoda-modal" data-modal-toggle="garoda-modal">
+            <button class="w-full" (click)="openModal('garodaModal')">
                 <img class="h-72 sm:h-80 object-none w-full rounded-t-lg hover:scale-110 transition duration-500" src="/assets/img/excursions/garoda/garoda_1.jpg" alt="" />
             </button>
             <div class="p-5">
-                <button data-modal-target="garoda-modal" data-modal-toggle="garoda-modal" class="text-left">
+                <button (click)="openModal('garodaModal')" class="text-left">
                     <h5 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">GARODA</h5>
                     <h6 class="mb-2 text-lg font-bold tracking-tight text-gray-700 dark:text-gray-300">mezza giornata</h6>
                 </button>
@@ -1498,7 +1498,7 @@
                 <div class="flex justify-items-end">
                     <span class="items-center inline-flex text-md font-semibold text-gray-900 dark:text-white ml-0 mr-1">da </span>
                     <span class="items-center inline-flex text-xl font-bold text-amber-600 text-left ml-0 mr-auto">€25</span>
-                    <button data-modal-target="garoda-modal" data-modal-toggle="garoda-modal" class="inline-flex items-center px-3 py-2 mr-0 ml-auto text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    <button (click)="openModal('garodaModal')" class="inline-flex items-center px-3 py-2 mr-0 ml-auto text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                         Info
                         <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
@@ -1507,7 +1507,7 @@
                     <div id="garoda-modal" tabindex="-1" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
                         <div class="relative w-full max-w-7xl max-h-full">
                             <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                                <button type="button" class="z-40 sticky float-right mr-5 top-5 text-gray-400 hover:bg-gray-400 hover:text-gray-900 rounded-full bg-gray-200 border-4 border-gray-500 text-sm w-10 h-10 inline-flex justify-center items-center dark:hover:bg-gray-500 dark:bg-gray-700 dark:border-gray-300 dark:hover:text-white" data-modal-hide="garoda-modal">
+                                <button type="button" class="z-40 sticky float-right mr-5 top-5 text-gray-400 hover:bg-gray-400 hover:text-gray-900 rounded-full bg-gray-200 border-4 border-gray-500 text-sm w-10 h-10 inline-flex justify-center items-center dark:hover:bg-gray-500 dark:bg-gray-700 dark:border-gray-300 dark:hover:text-white" (click)="closeModal('garodaModal')">
                                     <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
                                     </svg>
@@ -1529,33 +1529,33 @@
                                     </div>
                                 </div>
                                 <div class="p-6 bg-orange-100 dark:bg-gray-800 grid grid-cols-1 gap-6 md:grid-cols-2">
-                                    <div id="default-carousel" class="relative items-center h-72 sm:h-96 lg:h-[28rem] px-6" data-carousel="static">
+                                    <div class="relative items-center h-72 sm:h-96 lg:h-[28rem] px-6">
                                         <div class="relative h-72 overflow-hidden rounded-lg sm:h-96 lg:h-[28rem]">
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-garoda-item-1">
                                                 <img src="/assets/img/excursions/garoda/garoda_1.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-garoda-item-2">
                                                 <img src="/assets/img/excursions/garoda/garoda_2.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
                                         </div>
                                         <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" id="carousel-garoda-indicator-1"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" id="carousel-garoda-indicator-2"></button>
                                         </div>
-                                        <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                                        <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" id="carousel-garoda-prev">
                                             <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
                                                 <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
                                                 </svg>
-                                                <span class="sr-only">Previous</span>
+                                                <span class="hidden">Previous</span>
                                             </span>
                                         </button>
-                                        <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                                        <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" id="carousel-garoda-next">
                                             <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
                                                 <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
                                                 </svg>
-                                                <span class="sr-only">Next</span>
+                                                <span class="hidden">Next</span>
                                             </span>
                                         </button>
                                     </div>
@@ -1601,11 +1601,11 @@
         </div>
 
         <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-900 dark:border-gray-700">
-            <button class="w-full" data-modal-target="jacaranda-modal" data-modal-toggle="jacaranda-modal">
+            <button class="w-full" (click)="openModal('jacarandaModal')">
                 <img class="h-72 sm:h-80 object-none w-full rounded-t-lg hover:scale-110 transition duration-500" src="/assets/img/excursions/jacaranda/jacaranda_1.jpg" alt="" />
             </button>
             <div class="p-5">
-                <button data-modal-target="jacaranda-modal" data-modal-toggle="jacaranda-modal" class="text-left">
+                <button (click)="openModal('jacarandaModal')" class="text-left">
                     <h5 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">JACARANDA</h5>
                     <h6 class="mb-2 text-lg font-bold tracking-tight text-gray-700 dark:text-gray-300">mezza giornata</h6>
                 </button>
@@ -1620,7 +1620,7 @@
                 <div class="flex justify-items-end">
                     <span class="items-center inline-flex text-md font-semibold text-gray-900 dark:text-white ml-0 mr-1">da </span>
                     <span class="items-center inline-flex text-xl font-bold text-amber-600 text-left ml-0 mr-auto">€25</span>
-                    <button data-modal-target="jacaranda-modal" data-modal-toggle="jacaranda-modal" class="inline-flex items-center px-3 py-2 mr-0 ml-auto text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    <button (click)="openModal('jacarandaModal')" class="inline-flex items-center px-3 py-2 mr-0 ml-auto text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                         Info
                         <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
@@ -1629,7 +1629,7 @@
                     <div id="jacaranda-modal" tabindex="-1" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
                         <div class="relative w-full max-w-7xl max-h-full">
                             <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                                <button type="button" class="z-40 sticky float-right mr-5 top-5 text-gray-400 hover:bg-gray-400 hover:text-gray-900 rounded-full bg-gray-200 border-4 border-gray-500 text-sm w-10 h-10 inline-flex justify-center items-center dark:hover:bg-gray-500 dark:bg-gray-700 dark:border-gray-300 dark:hover:text-white" data-modal-hide="jacaranda-modal">
+                                <button type="button" class="z-40 sticky float-right mr-5 top-5 text-gray-400 hover:bg-gray-400 hover:text-gray-900 rounded-full bg-gray-200 border-4 border-gray-500 text-sm w-10 h-10 inline-flex justify-center items-center dark:hover:bg-gray-500 dark:bg-gray-700 dark:border-gray-300 dark:hover:text-white" (click)="closeModal('jacarandaModal')">
                                     <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
                                     </svg>
@@ -1651,33 +1651,33 @@
                                     </div>
                                 </div>
                                 <div class="p-6 bg-orange-100 dark:bg-gray-800 grid grid-cols-1 gap-6 md:grid-cols-2">
-                                    <div id="default-carousel" class="relative items-center h-72 sm:h-96 lg:h-[28rem] px-6" data-carousel="static">
+                                    <div class="relative items-center h-72 sm:h-96 lg:h-[28rem] px-6">
                                         <div class="relative h-72 overflow-hidden rounded-lg sm:h-96 lg:h-[28rem]">
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-jacaranda-item-1">
                                                 <img src="/assets/img/excursions/jacaranda/jacaranda_1.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-jacaranda-item-2">
                                                 <img src="/assets/img/excursions/jacaranda/jacaranda_2.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
                                         </div>
                                         <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" id="carousel-jacaranda-indicator-1"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" id="carousel-jacaranda-indicator-2"></button>
                                         </div>
-                                        <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                                        <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" id="carousel-jacaranda-prev">
                                             <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
                                                 <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
                                                 </svg>
-                                                <span class="sr-only">Previous</span>
+                                                <span class="hidden">Previous</span>
                                             </span>
                                         </button>
-                                        <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                                        <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" id="carousel-jacaranda-next">
                                             <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
                                                 <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
                                                 </svg>
-                                                <span class="sr-only">Next</span>
+                                                <span class="hidden">Next</span>
                                             </span>
                                         </button>
                                     </div>
@@ -1724,11 +1724,11 @@
         </div>
 
         <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-900 dark:border-gray-700">
-            <button class="w-full" data-modal-target="breeze-modal" data-modal-toggle="breeze-modal">
+            <button class="w-full" (click)="openModal('breezeModal')">
                 <img class="h-72 sm:h-80 object-none w-full rounded-t-lg hover:scale-110 transition duration-500" src="/assets/img/excursions/breeze/breeze_1.jpg" alt="" />
             </button>
             <div class="p-5">
-                <button data-modal-target="breeze-modal" data-modal-toggle="breeze-modal" class="text-left">
+                <button (click)="openModal('breezeModal')" class="text-left">
                     <h5 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">OCEAN BREEZE</h5>
                     <h6 class="mb-2 text-lg font-bold tracking-tight text-gray-700 dark:text-gray-300">mezza giornata</h6>
                 </button>
@@ -1743,7 +1743,7 @@
                 <div class="flex justify-items-end">
                     <span class="items-center inline-flex text-md font-semibold text-gray-900 dark:text-white ml-0 mr-1">da </span>
                     <span class="items-center inline-flex text-xl font-bold text-amber-600 text-left ml-0 mr-auto">€25</span>
-                    <button data-modal-target="breeze-modal" data-modal-toggle="breeze-modal" class="inline-flex items-center px-3 py-2 mr-0 ml-auto text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    <button (click)="openModal('breezeModal')" class="inline-flex items-center px-3 py-2 mr-0 ml-auto text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                         Info
                         <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
@@ -1752,7 +1752,7 @@
                     <div id="breeze-modal" tabindex="-1" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
                         <div class="relative w-full max-w-7xl max-h-full">
                             <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                                <button type="button" class="z-40 sticky float-right mr-5 top-5 text-gray-400 hover:bg-gray-400 hover:text-gray-900 rounded-full bg-gray-200 border-4 border-gray-500 text-sm w-10 h-10 inline-flex justify-center items-center dark:hover:bg-gray-500 dark:bg-gray-700 dark:border-gray-300 dark:hover:text-white" data-modal-hide="breeze-modal">
+                                <button type="button" class="z-40 sticky float-right mr-5 top-5 text-gray-400 hover:bg-gray-400 hover:text-gray-900 rounded-full bg-gray-200 border-4 border-gray-500 text-sm w-10 h-10 inline-flex justify-center items-center dark:hover:bg-gray-500 dark:bg-gray-700 dark:border-gray-300 dark:hover:text-white" (click)="closeModal('breezeModal')">
                                     <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
                                     </svg>
@@ -1774,33 +1774,33 @@
                                     </div>
                                 </div>
                                 <div class="p-6 bg-orange-100 dark:bg-gray-800 grid grid-cols-1 gap-6 md:grid-cols-2">
-                                    <div id="default-carousel" class="relative items-center h-72 sm:h-96 lg:h-[28rem] px-6" data-carousel="static">
+                                    <div class="relative items-center h-72 sm:h-96 lg:h-[28rem] px-6">
                                         <div class="relative h-72 overflow-hidden rounded-lg sm:h-96 lg:h-[28rem]">
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-breeze-item-1">
                                                 <img src="/assets/img/excursions/breeze/breeze_1.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-breeze-item-2">
                                                 <img src="/assets/img/excursions/breeze/breeze_2.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
                                         </div>
                                         <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" id="carousel-breeze-indicator-1"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" id="carousel-breeze-indicator-2"></button>
                                         </div>
-                                        <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                                        <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" id="carousel-breeze-prev">
                                             <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
                                                 <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
                                                 </svg>
-                                                <span class="sr-only">Previous</span>
+                                                <span class="hidden">Previous</span>
                                             </span>
                                         </button>
-                                        <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                                        <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" id="carousel-breeze-next">
                                             <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
                                                 <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
                                                 </svg>
-                                                <span class="sr-only">Next</span>
+                                                <span class="hidden">Next</span>
                                             </span>
                                         </button>
                                     </div>
@@ -1844,11 +1844,11 @@
         </div>
 
         <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-900 dark:border-gray-700">
-            <button class="w-full" data-modal-target="mida-creek-modal" data-modal-toggle="mida-creek-modal">
+            <button class="w-full" (click)="openModal('midaCreekModal')">
                 <img class="h-72 sm:h-80 object-none w-full rounded-t-lg hover:scale-110 transition duration-500" src="/assets/img/excursions/mida_creek/mida_creek_1.png" alt="" />
             </button>
             <div class="p-5">
-                <button data-modal-target="mida-creek-modal" data-modal-toggle="mida-creek-modal" class="text-left">
+                <button (click)="openModal('midaCreekModal')" class="text-left">
                     <h5 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">MIDA CREEK</h5>
                     <h6 class="mb-2 text-lg font-bold tracking-tight text-gray-700 dark:text-gray-300">mezza giornata</h6>
                 </button>
@@ -1863,7 +1863,7 @@
                 <div class="flex justify-items-end">
                     <span class="items-center inline-flex text-md font-semibold text-gray-900 dark:text-white ml-0 mr-1">da </span>
                     <span class="items-center inline-flex text-xl font-bold text-amber-600 text-left ml-0 mr-auto">€25</span>
-                    <button data-modal-target="mida-creek-modal" data-modal-toggle="mida-creek-modal" class="inline-flex items-center px-3 py-2 mr-0 ml-auto text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    <button (click)="openModal('midaCreekModal')" class="inline-flex items-center px-3 py-2 mr-0 ml-auto text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                         Info
                         <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
@@ -1872,7 +1872,7 @@
                     <div id="mida-creek-modal" tabindex="-1" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
                         <div class="relative w-full max-w-7xl max-h-full">
                             <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                                <button type="button" class="z-40 sticky float-right mr-5 top-5 text-gray-400 hover:bg-gray-400 hover:text-gray-900 rounded-full bg-gray-200 border-4 border-gray-500 text-sm w-10 h-10 inline-flex justify-center items-center dark:hover:bg-gray-500 dark:bg-gray-700 dark:border-gray-300 dark:hover:text-white" data-modal-hide="mida-creek-modal">
+                                <button type="button" class="z-40 sticky float-right mr-5 top-5 text-gray-400 hover:bg-gray-400 hover:text-gray-900 rounded-full bg-gray-200 border-4 border-gray-500 text-sm w-10 h-10 inline-flex justify-center items-center dark:hover:bg-gray-500 dark:bg-gray-700 dark:border-gray-300 dark:hover:text-white" (click)="closeModal('midaCreekModal')">
                                     <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
                                     </svg>
@@ -1894,41 +1894,41 @@
                                     </div>
                                 </div>
                                 <div class="p-6 bg-orange-100 dark:bg-gray-800 grid grid-cols-1 gap-6 md:grid-cols-2">
-                                    <div id="default-carousel" class="relative items-center h-72 sm:h-96 lg:h-[28rem] px-6" data-carousel="static">
+                                    <div class="relative items-center h-72 sm:h-96 lg:h-[28rem] px-6">
                                         <div class="relative h-72 overflow-hidden rounded-lg sm:h-96 lg:h-[28rem]">
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-mida-creek-item-1">
                                                 <img src="/assets/img/excursions/mida_creek/mida_creek_1.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-mida-creek-item-2">
                                                 <img src="/assets/img/excursions/mida_creek/mida_creek_2.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-mida-creek-item-3">
                                                 <img src="/assets/img/excursions/mida_creek/mida_creek_3.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-mida-creek-item-4">
                                                 <img src="/assets/img/excursions/mida_creek/mida_creek_4.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
                                         </div>
                                         <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" id="carousel-mida-creek-indicator-1"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" id="carousel-mida-creek-indicator-2"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" id="carousel-mida-creek-indicator-3"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" id="carousel-mida-creek-indicator-4"></button>
                                         </div>
-                                        <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                                        <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" id="carousel-mida-creek-prev">
                                             <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
                                                 <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
                                                 </svg>
-                                                <span class="sr-only">Previous</span>
+                                                <span class="hidden">Previous</span>
                                             </span>
                                         </button>
-                                        <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                                        <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" id="carousel-mida-creek-next">
                                             <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
                                                 <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
                                                 </svg>
-                                                <span class="sr-only">Next</span>
+                                                <span class="hidden">Next</span>
                                             </span>
                                         </button>
                                     </div>
@@ -1965,11 +1965,11 @@
         </div>
 
         <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-900 dark:border-gray-700">
-            <button class="w-full" data-modal-target="falconeria-modal" data-modal-toggle="falconeria-modal">
+            <button class="w-full" (click)="openModal('falconeriaModal')">
                 <img class="h-72 sm:h-80 object-none w-full rounded-t-lg hover:scale-110 transition duration-500" src="/assets/img/excursions/malindi_falconeria/malindi_falconeria_1.jpg" alt="" />
             </button>
             <div class="p-5">
-                <button data-modal-target="falconeria-modal" data-modal-toggle="falconeria-modal" class="text-left">
+                <button (click)="openModal('falconeriaModal')" class="text-left">
                     <h5 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">FALCONERIA DI MALINDI</h5>
                     <h6 class="mb-2 text-lg font-bold tracking-tight text-gray-700 dark:text-gray-300">mezza giornata</h6>
                 </button>
@@ -1984,7 +1984,7 @@
                 <div class="flex justify-items-end">
                     <span class="items-center inline-flex text-md font-semibold text-gray-900 dark:text-white ml-0 mr-1">da </span>
                     <span class="items-center inline-flex text-xl font-bold text-amber-600 text-left ml-0 mr-auto">€25</span>
-                    <button data-modal-target="falconeria-modal" data-modal-toggle="falconeria-modal" class="inline-flex items-center px-3 py-2 mr-0 ml-auto text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    <button (click)="openModal('falconeriaModal')" class="inline-flex items-center px-3 py-2 mr-0 ml-auto text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                         Info
                         <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
@@ -1993,7 +1993,7 @@
                     <div id="falconeria-modal" tabindex="-1" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
                         <div class="relative w-full max-w-7xl max-h-full">
                             <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                                <button type="button" class="z-40 sticky float-right mr-5 top-5 text-gray-400 hover:bg-gray-400 hover:text-gray-900 rounded-full bg-gray-200 border-4 border-gray-500 text-sm w-10 h-10 inline-flex justify-center items-center dark:hover:bg-gray-500 dark:bg-gray-700 dark:border-gray-300 dark:hover:text-white" data-modal-hide="falconeria-modal">
+                                <button type="button" class="z-40 sticky float-right mr-5 top-5 text-gray-400 hover:bg-gray-400 hover:text-gray-900 rounded-full bg-gray-200 border-4 border-gray-500 text-sm w-10 h-10 inline-flex justify-center items-center dark:hover:bg-gray-500 dark:bg-gray-700 dark:border-gray-300 dark:hover:text-white" (click)="closeModal('falconeriaModal')">
                                     <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
                                     </svg>
@@ -2015,37 +2015,37 @@
                                     </div>
                                 </div>
                                 <div class="p-6 bg-orange-100 dark:bg-gray-800 grid grid-cols-1 gap-6 md:grid-cols-2">
-                                    <div id="default-carousel" class="relative items-center h-72 sm:h-96 lg:h-[28rem] px-6" data-carousel="static">
+                                    <div class="relative items-center h-72 sm:h-96 lg:h-[28rem] px-6">
                                         <div class="relative h-72 overflow-hidden rounded-lg sm:h-96 lg:h-[28rem]">
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-malindi-falconeria-item-1">
                                                 <img src="/assets/img/excursions/malindi_falconeria/malindi_falconeria_1.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-malindi-falconeria-item-2">
                                                 <img src="/assets/img/excursions/malindi_falconeria/malindi_falconeria_2.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-malindi-falconeria-item-3">
                                                 <img src="/assets/img/excursions/malindi_falconeria/malindi_falconeria_3.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
                                         </div>
                                         <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" id="carousel-malindi-falconeria-indicator-1"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" id="carousel-malindi-falconeria-indicator-2"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" id="carousel-malindi-falconeria-indicator-3"></button>
                                         </div>
-                                        <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                                        <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" id="carousel-malindi-falconeria-prev">
                                             <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
                                                 <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
                                                 </svg>
-                                                <span class="sr-only">Previous</span>
+                                                <span class="hidden">Previous</span>
                                             </span>
                                         </button>
-                                        <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                                        <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" id="carousel-malindi-falconeria-next">
                                             <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
                                                 <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
                                                 </svg>
-                                                <span class="sr-only">Next</span>
+                                                <span class="hidden">Next</span>
                                             </span>
                                         </button>
                                     </div>
@@ -2079,11 +2079,11 @@
         </div>
 
         <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-900 dark:border-gray-700">
-            <button class="w-full" data-modal-target="haller-park-modal" data-modal-toggle="haller-park-modal">
+            <button class="w-full" (click)="openModal('hallerParkModal')">
                 <img class="h-72 sm:h-80 object-none w-full rounded-t-lg hover:scale-110 transition duration-500" src="/assets/img/excursions/haller_park/haller_park_1.jpg" alt="" />
             </button>
             <div class="p-5">
-                <button data-modal-target="haller-park-modal" data-modal-toggle="haller-park-modal" class="text-left">
+                <button (click)="openModal('hallerParkModal')" class="text-left">
                     <h5 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">HALLER PARK + FORT JESUS</h5>
                     <h6 class="mb-2 text-lg font-bold tracking-tight text-gray-700 dark:text-gray-300">giornata intera</h6>
                 </button>
@@ -2098,7 +2098,7 @@
                 <div class="flex justify-items-end">
                     <span class="items-center inline-flex text-md font-semibold text-gray-900 dark:text-white ml-0 mr-1">da </span>
                     <span class="items-center inline-flex text-xl font-bold text-amber-600 text-left ml-0 mr-auto">€60</span>
-                    <button data-modal-target="haller-park-modal" data-modal-toggle="haller-park-modal" class="inline-flex items-center px-3 py-2 mr-0 ml-auto text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    <button (click)="openModal('hallerParkModal')" class="inline-flex items-center px-3 py-2 mr-0 ml-auto text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                         Info
                         <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
@@ -2107,7 +2107,7 @@
                     <div id="haller-park-modal" tabindex="-1" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
                         <div class="relative w-full max-w-7xl max-h-full">
                             <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                                <button type="button" class="z-40 sticky float-right mr-5 top-5 text-gray-400 hover:bg-gray-400 hover:text-gray-900 rounded-full bg-gray-200 border-4 border-gray-500 text-sm w-10 h-10 inline-flex justify-center items-center dark:hover:bg-gray-500 dark:bg-gray-700 dark:border-gray-300 dark:hover:text-white" data-modal-hide="haller-park-modal">
+                                <button type="button" class="z-40 sticky float-right mr-5 top-5 text-gray-400 hover:bg-gray-400 hover:text-gray-900 rounded-full bg-gray-200 border-4 border-gray-500 text-sm w-10 h-10 inline-flex justify-center items-center dark:hover:bg-gray-500 dark:bg-gray-700 dark:border-gray-300 dark:hover:text-white" (click)="closeModal('hallerParkModal')">
                                     <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
                                     </svg>
@@ -2129,49 +2129,49 @@
                                     </div>
                                 </div>
                                 <div class="p-6 bg-orange-100 dark:bg-gray-800 grid grid-cols-1 gap-6 md:grid-cols-2">
-                                    <div id="default-carousel" class="relative items-center h-72 sm:h-96 lg:h-[28rem] px-6" data-carousel="static">
+                                    <div class="relative items-center h-72 sm:h-96 lg:h-[28rem] px-6">
                                         <div class="relative h-72 overflow-hidden rounded-lg sm:h-96 lg:h-[28rem]">
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-haller-park-item-1">
                                                 <img src="/assets/img/excursions/haller_park/haller_park_1.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-haller-park-item-2">
                                                 <img src="/assets/img/excursions/haller_park/haller_park_2.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-haller-park-item-3">
                                                 <img src="/assets/img/excursions/haller_park/haller_park_3.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-haller-park-item-4">
                                                 <img src="/assets/img/excursions/haller_park/haller_park_4.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-haller-park-item-5">
                                                 <img src="/assets/img/excursions/haller_park/haller_park_5.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
-                                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <div class="hidden duration-700 ease-in-out" id="carousel-haller-park-item-6">
                                                 <img src="/assets/img/excursions/haller_park/haller_park_6.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             </div>
                                         </div>
                                         <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 5" data-carousel-slide-to="4"></button>
-                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 6" data-carousel-slide-to="5"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" id="carousel-haller-park-indicator-1"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" id="carousel-haller-park-indicator-2"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" id="carousel-haller-park-indicator-3"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" id="carousel-haller-park-indicator-4"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" id="carousel-haller-park-indicator-5"></button>
+                                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 6" id="carousel-haller-park-indicator-6"></button>
                                         </div>
-                                        <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                                        <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" id="carousel-haller-park-prev">
                                             <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
                                                 <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
                                                 </svg>
-                                                <span class="sr-only">Previous</span>
+                                                <span class="hidden">Previous</span>
                                             </span>
                                         </button>
-                                        <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                                        <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" id="carousel-haller-park-next">
                                             <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
                                                 <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
                                                 </svg>
-                                                <span class="sr-only">Next</span>
+                                                <span class="hidden">Next</span>
                                             </span>
                                         </button>
                                     </div>
