@@ -6,6 +6,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { FaqComponent } from './pages/faq/faq.component';
 import { SafarisComponent } from './pages/safaris/safaris.component';
 import { ExcursionsComponent } from './pages/excursions/excursions.component';
+import { SchedaEscursioniComponent } from './components/scheda-escursioni/scheda-escursioni.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
@@ -17,7 +18,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled'})],
+  imports: [RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' })],
   exports: [RouterModule]
 })
 
