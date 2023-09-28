@@ -1,4 +1,4 @@
-import { Component ,OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Modal, Carousel } from 'flowbite';
 import type { ModalOptions, ModalInterface, CarouselItem, CarouselOptions, CarouselInterface } from 'flowbite'
 
@@ -28,11 +28,11 @@ export class ExcursionsComponent implements OnInit {
   private hallerParkModal: ModalInterface = new Modal();
 
   ngOnInit(): void {
-      this.enableAllModal();
-      this.enableAllCarousel();
+    this.enableAllModal();
+    this.enableAllCarousel();
   }
 
-  enableAllModal(): void{
+  enableAllModal(): void {
     const safarBlueElement = <HTMLElement>document.querySelector('#safari-blue-modal');
     const safarSarElement = <HTMLElement>document.querySelector('#safari-sard-modal');
     const goldBeachElement = <HTMLElement>document.querySelector('#gold-beach-modal');
@@ -55,9 +55,9 @@ export class ExcursionsComponent implements OnInit {
       backdrop: 'dynamic',
       backdropClasses: 'bg-gray-900 bg-opacity-50 dark:bg-opacity-80 fixed inset-0 z-40',
       closable: true,
-      onHide: () => {},
-      onShow: () => {},
-      onToggle: () => {}
+      onHide: () => { },
+      onShow: () => { },
+      onToggle: () => { }
     }
 
     this.safarBlueModal = new Modal(safarBlueElement, modalOptions);
@@ -78,7 +78,7 @@ export class ExcursionsComponent implements OnInit {
     this.hallerParkModal = new Modal(hallerParkElement, modalOptions);
   }
 
-  enableAllCarousel(): void{
+  enableAllCarousel(): void {
     const itemInCarousel = [
       { name: 'safari-blue', item: 13 },
       { name: 'sardegna', item: 8 },
@@ -98,12 +98,12 @@ export class ExcursionsComponent implements OnInit {
       { name: 'haller-park', item: 6 }
     ]
 
-    itemInCarousel.forEach( (carousel) => {
+    itemInCarousel.forEach((carousel) => {
       var items: CarouselItem[] = []
       var optionItem = []
-      for(let i=1; i <= carousel.item; i++){
-        items.push({ position: i-1, el: <HTMLElement>document.getElementById('carousel-' + carousel.name + '-item-' + i) });
-        optionItem.push({ position: i-1, el: <HTMLElement>document.getElementById('carousel-' + carousel.name + '-indicator-' + i) })
+      for (let i = 1; i <= carousel.item; i++) {
+        items.push({ position: i - 1, el: <HTMLElement>document.getElementById('carousel-' + carousel.name + '-item-' + i) });
+        optionItem.push({ position: i - 1, el: <HTMLElement>document.getElementById('carousel-' + carousel.name + '-indicator-' + i) })
       }
       var options: CarouselOptions = {
         defaultPosition: 1,
@@ -113,13 +113,13 @@ export class ExcursionsComponent implements OnInit {
           inactiveClasses: 'bg-white/50 dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800',
           items: optionItem
         },
-        onNext: () => {},
-        onPrev: () => {},
-        onChange: () => {}
+        onNext: () => { },
+        onPrev: () => { },
+        onChange: () => { }
       }
       const carouselHtml: CarouselInterface = new Carousel(items, options);
       const prevButton = <HTMLElement>document.getElementById('carousel-' + carousel.name + '-prev');
-      const nextButton = <HTMLElement>document.getElementById( 'carousel-' + carousel.name + '-next');
+      const nextButton = <HTMLElement>document.getElementById('carousel-' + carousel.name + '-next');
       prevButton.addEventListener('click', () => {
         carouselHtml.prev();
       });
@@ -130,10 +130,10 @@ export class ExcursionsComponent implements OnInit {
 
   }
 
-  openModal(modalName: string): void{
+  openModal(modalName: string): void {
     this[modalName].show()
   }
-  closeModal(modalName: string): void{
+  closeModal(modalName: string): void {
     this[modalName].hide()
   }
 
