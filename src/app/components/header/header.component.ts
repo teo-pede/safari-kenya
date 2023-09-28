@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
+import { Modal, Carousel } from 'flowbite';
+import type { ModalOptions, ModalInterface, CarouselItem, CarouselOptions, CarouselInterface } from 'flowbite'
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit{
+export class HeaderComponent implements OnInit, OnDestroy{
+
+  private navbarModal: ModalInterface = new Modal();
 
   isHome = true;
-
   links = [
     {name: 'Escursioni', link: '/excursions'},
     {name: 'Safari', link: '/safaris'},
@@ -22,11 +25,7 @@ export class HeaderComponent implements OnInit{
   
   routeEvent(router: Router){
     router.events.subscribe(e => {
-      var navBar = <HTMLElement>document.getElementById('navbar-sticky');
-      if (!navBar.classList.contains('hidden')){
-        var navBarButton = <HTMLElement>document.getElementById('collapse-navbar-button');
-        navBarButton.click();
-      }
+      this.closeNavbar()
       if (e instanceof NavigationEnd){
         this.isHome = e.urlAfterRedirects.startsWith('/#') || e.urlAfterRedirects == '/'
       }
@@ -34,9 +33,38 @@ export class HeaderComponent implements OnInit{
   }
   
   ngOnInit() {
+    this.enableNavarModal();
     this.routeEvent(this.router);
     this.chooseTheme();
     this.backOnTopBtn();
+  }
+
+  ngOnDestroy(): void {
+      this.closeNavbar()
+  }
+
+  enableNavarModal(): void{
+    const navbarElement = <HTMLElement>document.getElementById('navbar-mini');
+    const modalOptions: ModalOptions = {
+      placement: 'top-right',
+      backdrop: 'dynamic',
+      backdropClasses: 'bg-gray-900 bg-opacity-50 dark:bg-opacity-80 fixed inset-0 z-40',
+      closable: true,
+      onHide: () => {},
+      onShow: () => {},
+      onToggle: () => {}
+    }
+    this.navbarModal = new Modal(navbarElement, modalOptions);
+  }
+
+  openNavbar(): void{
+    this.navbarModal.show()
+  }
+  closeNavbar(): void{
+    this.navbarModal.hide()
+  }
+  toggleNavbar(): void{
+    this.navbarModal.toggle()
   }
 
   chooseTheme():void {
