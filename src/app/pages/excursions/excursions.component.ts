@@ -10,6 +10,139 @@ import type { ModalOptions, ModalInterface, CarouselItem, CarouselOptions, Carou
 export class ExcursionsComponent implements OnInit {
   [key: string]: any;
 
+  schedeDaMostrare = [
+    {
+      title: "SAFARI BLUE GARODA",
+      sub_title: "giornata intera",
+      position: "Parco Marino & Mangrovie & Garoda",
+      price: "€60",
+      img_path: "/assets/img/excursions/safari_blue/safari_blue_5.jpg",
+      modale_da_aprire: "safarBlueModal"
+    },
+    {
+      title: "SAFARI BLUE SARDEGNA 2",
+      sub_title: "giornata intera",
+      position: " Parco Marino & Watamu",
+      price: "€60",
+      img_path: "/assets/img/excursions/sardegna/sardegna_1.jpg",
+      modale_da_aprire: "safarSardModal"
+    },
+    {
+      title: "SPIAGGIA DORATA - CHE SHALE",
+      sub_title: "mezza giornata",
+      position: " Che Shale",
+      price: "€30",
+      img_path: "/assets/img/excursions/golden_beach/gold_5.jpg",
+      modale_da_aprire: "goldBeachModal"
+    },
+    {
+      title: "SPIAGGIA DORATA - ISOLA DI ROBINSON - MARAFA",
+      sub_title: "giornata intera",
+      position: " Parco Marino & Watamu",
+      price: "€70",
+      img_path: "/assets/img/excursions/marafa_gold_robinson/mgr_7.jpg",
+      modale_da_aprire: "mgrModal"
+    },
+    {
+      title: "MARAFA - HELLS KITCHEN",
+      sub_title: "mezza intera",
+      position: "Marafa",
+      price: "€35",
+      img_path: "/assets/img/excursions/marafa/marafa_1.jpeg",
+      modale_da_aprire: "marafaModal"
+    },
+    {
+      title: "ROVINE DI GEDE",
+      sub_title: "mezza intera",
+      position: "Gede",
+      price: "€30",
+      img_path: "/assets/img/excursions/gede/gede_2.jpg",
+      modale_da_aprire: "gedeModal"
+    },
+    {
+      title: "MALINDI TOUR",
+      sub_title: "mezza intera",
+      position: "Malindi",
+      price: "€25",
+      img_path: "/assets/img/excursions/malindi/malindi_1.jpg",
+      modale_da_aprire: "malindiModal"
+    },
+    {
+      title: "MALINDI BY NIGHT",
+      sub_title: "mezza intera",
+      position: "Malindi",
+      price: "€25",
+      img_path: "/assets/img/excursions/malindi_night/malindi_night_2.jpg",
+      modale_da_aprire: "malindiNightModal"
+    },
+    {
+      title: "ISOLA DELL'AMORE",
+      sub_title: "mezza intera",
+      position: "Isola dell'Amore, Watamu",
+      price: "€30",
+      img_path: "/assets/img/excursions/amore/amore_1.jpg",
+      modale_da_aprire: "amoreModal"
+    },
+    {
+      title: "DABASO COMMUNITY",
+      sub_title: "mezza intera",
+      position: "Mida Creek, Watamu",
+      price: "€30",
+      img_path: "/assets/img/excursions/dabaso/dabaso_3.jpeg",
+      modale_da_aprire: "dabasoModal"
+    },
+    {
+      title: "GARODA",
+      sub_title: "mezza intera",
+      position: "Garoda, Watamu",
+      price: "€25",
+      img_path: "/assets/img/excursions/garoda/garoda_1.jpg",
+      modale_da_aprire: "garodaModal"
+    },
+    {
+      title: "JACARANDA",
+      sub_title: "mezza intera",
+      position: "Jacaranda, Watamu",
+      price: "€25",
+      img_path: "/assets/img/excursions/jacaranda/jacaranda_1.jpg",
+      modale_da_aprire: "jacarandaModal"
+    },
+    {
+      title: "OCEAN BREEZE",
+      sub_title: "mezza intera",
+      position: "Ocean Breeze, Watamu",
+      price: "€25",
+      img_path: "/assets/img/excursions/breeze/breeze_1.jpg",
+      modale_da_aprire: "breezeModal"
+    },
+    {
+      title: "MIDA CREEK",
+      sub_title: "mezza intera",
+      position: "Mida Creek, Watamu",
+      price: "€25",
+      img_path: "/assets/img/excursions/mida_creek/mida_creek_1.png",
+      modale_da_aprire: "midaCreekModal"
+    },
+    {
+      title: "FALCONERIA DI MALINDI",
+      sub_title: "mezza intera",
+      position: "Malindi",
+      price: "€25",
+      img_path: "/assets/img/excursions/malindi_falconeria/malindi_falconeria_1.jpg",
+      modale_da_aprire: "falconeriaModal"
+    },
+    {
+      title: "HALLER PARK + FORT JESUS",
+      sub_title: "giornata intera",
+      position: "Mombasa",
+      price: "€60",
+      img_path: "/assets/img/excursions/haller_park/haller_park_1.jpg",
+      modale_da_aprire: "hallerParkModal"
+    },
+
+
+  ];
+
   private safarBlueModal: ModalInterface = new Modal();
   private safarSardModal: ModalInterface = new Modal();
   private goldBeachModal: ModalInterface = new Modal();
@@ -131,6 +264,7 @@ export class ExcursionsComponent implements OnInit {
   }
 
   openModal(modalName: string): void {
+    debugger;
     this[modalName].show()
   }
   closeModal(modalName: string): void {

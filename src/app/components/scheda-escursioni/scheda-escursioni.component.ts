@@ -72,6 +72,14 @@ export class SchedaEscursioniComponent implements OnInit {
     sub_title: "Non venirci",
     position: "Maldive del salento",
     price: "60€",
+  }];
+
+  figheBrutte = [{
+    title: "Fake Sardegna",
+    sub_title: "Non venirci",
+    position: "Maldive del salento",
+    price: "60€",
+    testo: "Che Palle sta cosa",
   }]
 
 
