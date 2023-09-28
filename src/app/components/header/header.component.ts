@@ -8,7 +8,7 @@ import { Router, NavigationEnd } from '@angular/router';
 })
 export class HeaderComponent implements OnInit{
 
-  currentUrl = '';
+  isHome = true;
 
   links = [
     {name: 'Escursioni', link: '/excursions'},
@@ -28,7 +28,7 @@ export class HeaderComponent implements OnInit{
         navBarButton.click();
       }
       if (e instanceof NavigationEnd){
-        this.currentUrl = e.urlAfterRedirects
+        this.isHome = e.urlAfterRedirects.startsWith('/#') || e.urlAfterRedirects == '/'
       }
     });
   }
