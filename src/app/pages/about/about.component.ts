@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef, HostListener } from '@angular/core';
-import { Carousel } from "flowbite";
-import type { CarouselItem, CarouselOptions, CarouselInterface } from "flowbite";
+import { Carousel, Popover } from "flowbite";
+import type { CarouselItem, CarouselOptions, CarouselInterface, PopoverOptions, PopoverInterface } from "flowbite";
 
 @Component({
   selector: 'app-about',
@@ -55,7 +55,24 @@ export class AboutComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.setCarousel()
+    this.setCarousel();
+    this.enablePopOver();
+  }
+
+  enablePopOver(): void{
+    const targetEl = <HTMLElement>document.getElementById('popover-image');
+    const triggerEl = <HTMLElement>document.getElementById('popover-image-button');
+    const options: PopoverOptions = {
+      placement: 'top',
+      triggerType: 'hover',
+      offset: 10,
+      onHide: () => {},
+      onShow: () => {},
+      onToggle: () => {}
+    };
+    if (targetEl) {
+        const popover: PopoverInterface = new Popover(targetEl, triggerEl, options);
+    }
   }
 
   setCarousel(): void{

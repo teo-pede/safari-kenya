@@ -18,22 +18,10 @@
         </div>
         <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="navbar-sticky">
             <ul class="lg:bg-transparent xl:bg-transparent lg:dark:bg-transparent xl:dark:bg-transparent bg-gray-300 dark:bg-gray-800 flex flex-col p-4 lg:p-0 mt-4 font-bold text-xl rounded-lg lg:flex-row lg:space-x-8 lg:mt-0 lg:border-0">
-                <li>
-                    <a [routerLink]="['/excursions']" class="block py-2 pl-3 pr-4 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-amber-600 lg:p-0 lg:dark:hover:text-amber-600 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700" [ngClass]="currentUrl == '/' ? 'xl:text-white lg:text-white text-gray-950 dark:text-white' : 'dark:text-white text-gray-950'">Escursioni</a>
+                <li *ngFor="let linkItem of links">
+                    <a [routerLink]="[linkItem.link]" class="block py-2 pl-3 pr-4 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-amber-600 lg:p-0 lg:dark:hover:text-amber-600 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700" [ngClass]="currentUrl == '/' ? 'xl:text-white lg:text-white text-gray-950 dark:text-white' : 'dark:text-white text-gray-950'">{{ linkItem.name }}</a>
                 </li>
-                <li>
-                    <a [routerLink]="['/safaris']" class="block py-2 pl-3 pr-4 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-amber-600 lg:p-0 lg:dark:hover:text-amber-600 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700" [ngClass]="currentUrl == '/' ? 'xl:text-white lg:text-white text-gray-950 dark:text-white' : 'dark:text-white text-gray-950'">Safari</a>
-                </li>
-                <li>
-                    <a [routerLink]="['/faq']" class="block py-2 pl-3 pr-4 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-amber-600 lg:p-0 lg:dark:hover:text-amber-600 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700" [ngClass]="currentUrl == '/' ? 'xl:text-white lg:text-white text-gray-950 dark:text-white' : 'dark:text-white text-gray-950'" aria-current="page">Faq</a>
-                </li>
-                <li>
-                    <a [routerLink]="['/about']" class="block py-2 pl-3 pr-4 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-amber-600 lg:p-0 lg:dark:hover:text-amber-600 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700" [ngClass]="currentUrl == '/' ? 'xl:text-white lg:text-white text-gray-950 dark:text-white' : 'dark:text-white text-gray-950'">Chi sono</a>
-                </li>
-                <li>
-                    <a [routerLink]="['/contact']" class="block py-2 pl-3 pr-4 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-amber-600 lg:p-0 lg:dark:hover:text-amber-600 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700" [ngClass]="currentUrl == '/' ? 'xl:text-white lg:text-white text-gray-950 dark:text-white' : 'dark:text-white text-gray-950'">Contatti</a>
-                </li>
-                <li class="inline-flex">
+                <li class="inline-flex py-2 lg:py-0">
                     <a href="https://www.instagram.com/eliooboy?r=nametag" target="_blank" class="block pl-3 pr-3 rounded">
                         <svg class="animate-[spin_1s_ease-in-out] w-7 h-7 block rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-amber-600 lg:p-0 lg:dark:hover:text-amber-600 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700" [ngClass]="currentUrl == '/' ? 'xl:text-white lg:text-white text-gray-950 dark:text-white' : 'dark:text-white text-gray-950'" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" viewBox="0 0 50 50">
                             <path d="M 16 3 C 8.8324839 3 3 8.8324839 3 16 L 3 34 C 3 41.167516 8.8324839 47 16 47 L 34 47 C 41.167516 47 47 41.167516 47 34 L 47 16 C 47 8.8324839 41.167516 3 34 3 L 16 3 z M 16 5 L 34 5 C 40.086484 5 45 9.9135161 45 16 L 45 34 C 45 40.086484 40.086484 45 34 45 L 16 45 C 9.9135161 45 5 40.086484 5 34 L 5 16 C 5 9.9135161 9.9135161 5 16 5 z M 37 11 A 2 2 0 0 0 35 13 A 2 2 0 0 0 37 15 A 2 2 0 0 0 39 13 A 2 2 0 0 0 37 11 z M 25 14 C 18.936712 14 14 18.936712 14 25 C 14 31.063288 18.936712 36 25 36 C 31.063288 36 36 31.063288 36 25 C 36 18.936712 31.063288 14 25 14 z M 25 16 C 29.982407 16 34 20.017593 34 25 C 34 29.982407 29.982407 34 25 34 C 20.017593 34 16 29.982407 16 25 C 16 20.017593 20.017593 16 25 16 z"/>

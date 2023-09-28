@@ -9,9 +9,16 @@ import { Router, NavigationEnd } from '@angular/router';
 export class HeaderComponent implements OnInit{
 
   currentUrl = '';
-  constructor(private router: Router ) {
-    this.routeEvent(this.router);
-  }
+
+  links = [
+    {name: 'Escursioni', link: '/excursions'},
+    {name: 'Safari', link: '/safaris'},
+    {name: 'Faq', link: '/faq'},
+    {name: 'Chi sono', link: '/about'},
+    {name: 'Contatti', link: '/contact'}
+  ]
+
+  constructor(private router: Router ) {}
   
   routeEvent(router: Router){
     router.events.subscribe(e => {
@@ -21,12 +28,13 @@ export class HeaderComponent implements OnInit{
         navBarButton.click();
       }
       if (e instanceof NavigationEnd){
-        this.currentUrl = e.url
+        this.currentUrl = e.urlAfterRedirects
       }
     });
   }
   
-  ngOnInit() {    
+  ngOnInit() {
+    this.routeEvent(this.router);
     this.chooseTheme();
     this.backOnTopBtn();
   }

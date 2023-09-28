@@ -1,4 +1,4 @@
-import { Component ,OnInit } from '@angular/core';
+import { Component ,OnInit, OnDestroy } from '@angular/core';
 import { Modal, Carousel } from 'flowbite';
 import type { ModalOptions, ModalInterface, CarouselItem, CarouselOptions, CarouselInterface } from 'flowbite'
 
@@ -7,7 +7,7 @@ import type { ModalOptions, ModalInterface, CarouselItem, CarouselOptions, Carou
   templateUrl: './excursions.component.html',
   styleUrls: ['./excursions.component.css']
 })
-export class ExcursionsComponent implements OnInit {
+export class ExcursionsComponent implements OnInit, OnDestroy{
   [key: string]: any;
 
   private safarBlueModal: ModalInterface = new Modal();
@@ -32,10 +32,20 @@ export class ExcursionsComponent implements OnInit {
       this.enableAllCarousel();
   }
 
+  ngOnDestroy(): void {
+      this.closeAllModal();
+  }
+
+  closeAllModal(): void{
+    ['safarBlueModal', 'safarSardModal', 'goldBeachModal', 'mgrModal', 'marafaModal', 'gedeModal', 'malindiModal', 'malindiNightModal', 'amoreModal', 'dabasoModal', 'garodaModal', 'jacarandaModal', 'breezeModal', 'midaCreekModal', 'falconeriaModal', 'hallerParkModal'].forEach( (modalVar) => {
+      this.closeModal(modalVar)
+    })
+  }
+
   enableAllModal(): void{
     const safarBlueElement = <HTMLElement>document.querySelector('#safari-blue-modal');
-    const safarSarElement = <HTMLElement>document.querySelector('#safari-sard-modal');
-    const goldBeachElement = <HTMLElement>document.querySelector('#gold-beach-modal');
+    const safarSarElement = <HTMLElement>document.querySelector('#sardegna-modal');
+    const goldBeachElement = <HTMLElement>document.querySelector('#golden-beach-modal');
     const mgrElement = <HTMLElement>document.querySelector('#mgr-modal');
     const marafaElement = <HTMLElement>document.querySelector('#marafa-modal');
     const gedeElement = <HTMLElement>document.querySelector('#gede-modal');
@@ -47,7 +57,7 @@ export class ExcursionsComponent implements OnInit {
     const jacarandaElement = <HTMLElement>document.querySelector('#jacaranda-modal');
     const breezeElement = <HTMLElement>document.querySelector('#breeze-modal');
     const midaCreekElement = <HTMLElement>document.querySelector('#mida-creek-modal');
-    const falconeriaElement = <HTMLElement>document.querySelector('#falconeria-modal');
+    const falconeriaElement = <HTMLElement>document.querySelector('#malindi-falconeria-modal');
     const hallerParkElement = <HTMLElement>document.querySelector('#haller-park-modal');
 
     const modalOptions: ModalOptions = {

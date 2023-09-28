@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./safaris.component.css']
 })
 export class SafarisComponent {
-
+  scroll(el: HTMLElement) {
+    el.scrollIntoView();
+  }
 }

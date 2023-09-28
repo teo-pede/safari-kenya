@@ -13,7 +13,8 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'faq', component: FaqComponent },
   { path: 'excursions', component: ExcursionsComponent },
-  { path: 'safaris', component: SafarisComponent }
+  { path: 'safaris', component: SafarisComponent },
+  { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 
 @NgModule({

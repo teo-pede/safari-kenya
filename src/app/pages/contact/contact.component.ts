@@ -27,7 +27,7 @@ export class ContactComponent implements OnInit {
   isScrolledIntoView() {
     if (this.phoneDiv && !this.phoneDone) {
       const rectPhone = this.phoneDiv.nativeElement.getBoundingClientRect();
-      if (rectPhone.top >= 0 && rectPhone.bottom-110 <= window.innerHeight){
+      if (rectPhone.top >= 0 && rectPhone.bottom-200 <= window.innerHeight){
         this.phoneDiv.nativeElement.classList.remove('opacity-0')
         this.phoneDiv.nativeElement.classList.add('animate-fade-in-left')
         this.phoneDone = true
@@ -35,7 +35,7 @@ export class ContactComponent implements OnInit {
     }
     if (this.emailDiv && !this.emailDone) {
       const rectPhone = this.emailDiv.nativeElement.getBoundingClientRect();
-      if (rectPhone.top >= 0 && rectPhone.bottom-110 <= window.innerHeight){
+      if (rectPhone.top >= 0 && rectPhone.bottom-200 <= window.innerHeight){
         this.emailDiv.nativeElement.classList.remove('opacity-0')
         this.emailDiv.nativeElement.classList.add('animate-fade-in-up')
         this.emailDone = true
@@ -43,7 +43,7 @@ export class ContactComponent implements OnInit {
     }
     if (this.hourDiv && !this.hourDone) {
       const rectPhone = this.hourDiv.nativeElement.getBoundingClientRect();
-      if (rectPhone.top >= 0 && rectPhone.bottom-110 <= window.innerHeight){
+      if (rectPhone.top >= 0 && rectPhone.bottom-200 <= window.innerHeight){
         this.hourDiv.nativeElement.classList.remove('opacity-0')
         this.hourDiv.nativeElement.classList.add('animate-fade-in-right')
         this.hourDone = true
@@ -51,7 +51,7 @@ export class ContactComponent implements OnInit {
     }
     if (this.addressDiv && !this.addressDone) {
       const rectPhone = this.addressDiv.nativeElement.getBoundingClientRect();
-      if (rectPhone.top >= 0 && rectPhone.bottom-110 <= window.innerHeight){
+      if (rectPhone.top >= 0 && rectPhone.bottom-200 <= window.innerHeight){
         this.addressDiv.nativeElement.classList.remove('opacity-0')
         this.addressDiv.nativeElement.classList.add('animate-fade-in-down')
         this.addressDone = true
@@ -67,7 +67,7 @@ export class ContactComponent implements OnInit {
     const phone = <HTMLElement>document.getElementById('phoneDiv');
     if (phone && !this.phoneDone) {
       const rectPhone = phone.getBoundingClientRect();
-      if (rectPhone.top >= 0 && rectPhone.bottom-110 <= window.innerHeight){
+      if (rectPhone.top >= 0 && rectPhone.bottom-200 <= window.innerHeight){
         phone.classList.remove('opacity-0')
         phone.classList.add('animate-fade-in-left')
         this.phoneDone = true
@@ -76,7 +76,7 @@ export class ContactComponent implements OnInit {
     const email = <HTMLElement>document.getElementById('emailDiv');
     if (email && !this.emailDone) {
       const rectPhone = email.getBoundingClientRect();
-      if (rectPhone.top >= 0 && rectPhone.bottom-110 <= window.innerHeight){
+      if (rectPhone.top >= 0 && rectPhone.bottom-200 <= window.innerHeight){
         email.classList.remove('opacity-0')
         email.classList.add('animate-fade-in-up')
         this.emailDone = true
@@ -85,7 +85,7 @@ export class ContactComponent implements OnInit {
     const hour = <HTMLElement>document.getElementById('hourDiv');
     if (hour && !this.hourDone) {
       const rectPhone = hour.getBoundingClientRect();
-      if (rectPhone.top >= 0 && rectPhone.bottom-110 <= window.innerHeight){
+      if (rectPhone.top >= 0 && rectPhone.bottom-200 <= window.innerHeight){
         hour.classList.remove('opacity-0')
         hour.classList.add('animate-fade-in-right')
         this.hourDone = true
@@ -94,7 +94,7 @@ export class ContactComponent implements OnInit {
     const address = <HTMLElement>document.getElementById('addressDiv');
     if (address && !this.addressDone) {
       const rectPhone = address.getBoundingClientRect();
-      if (rectPhone.top >= 0 && rectPhone.bottom-110 <= window.innerHeight){
+      if (rectPhone.top >= 0 && rectPhone.bottom-200 <= window.innerHeight){
         address.classList.remove('opacity-0')
         address.classList.add('animate-fade-in-down')
         this.addressDone = true
