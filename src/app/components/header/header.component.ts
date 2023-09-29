@@ -12,6 +12,8 @@ export class HeaderComponent implements OnInit, OnDestroy{
 
   private navbarModal: ModalInterface = new Modal();
 
+  private pixelTopButtonVisible = 150
+
   isHome = true;
   links = [
     {name: 'Escursioni', link: '/excursions'},
@@ -33,6 +35,7 @@ export class HeaderComponent implements OnInit, OnDestroy{
   }
   
   ngOnInit() {
+    this.showBackToTop();
     this.enableNavarModal();
     this.routeEvent(this.router);
     this.chooseTheme();
@@ -103,16 +106,35 @@ export class HeaderComponent implements OnInit, OnDestroy{
     });
   }
 
-  backOnTopBtn(): void{
+  showBackToTop(): void{
     const mybutton = <HTMLElement>document.getElementById("btn-back-to-top");
-    const scrollFunction = () => {
-      if (
-        document.body.scrollTop > 250 ||
-        document.documentElement.scrollTop > 250
+    const navbarCollapseButton = <HTMLElement>document.getElementById("collapse-navbar-button");
+    if ( window.getComputedStyle(navbarCollapseButton).display == 'none' ){
+      if ( document.body.scrollTop > this.pixelTopButtonVisible ||
+            document.documentElement.scrollTop > this.pixelTopButtonVisible
       ) {
         mybutton.classList.remove("hidden");
       } else {
         mybutton.classList.add("hidden");
+      }
+    } else {
+      mybutton.classList.add("hidden")
+    }
+  }
+
+  backOnTopBtn(): void{
+    const mybutton = <HTMLElement>document.getElementById("btn-back-to-top");
+    const navbarCollapseButton = <HTMLElement>document.getElementById("collapse-navbar-button");
+    const scrollFunction = () => {
+      if ( window.getComputedStyle(navbarCollapseButton).display == 'none' ){
+        if ( document.body.scrollTop > this.pixelTopButtonVisible ||
+              document.documentElement.scrollTop > this.pixelTopButtonVisible ) {
+          mybutton.classList.remove("hidden");
+        } else {
+          mybutton.classList.add("hidden");
+        }
+      } else {
+        mybutton.classList.add("hidden")
       }
     };
     const backToTop = () => {

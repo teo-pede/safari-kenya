@@ -35,25 +35,18 @@
     </a>
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-8">
         <a class="flex items-center"></a>
-        <div class="flex lg:order-2">
+        <div class="flex lg:order-2 lg:pr-0 pr-12">
             <button id="theme-toggle" type="button" class="rounded-lg text-sm p-2.5" [ngClass]="isHome ? 'text-white hover:bg-gray-700 dark:hover:bg-amber-600' : 'text-gray-950 dark:text-white hover:bg-gray-200 dark:hover:bg-amber-600'">
                 <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
                 <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
             </button>
-            
-            <button (click)="toggleNavbar()" id="collapse-navbar-button" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg lg:hidden focus:outline-none focus:ring-2" [ngClass]="isHome ? 'text-gray-100 hover:bg-gray-300 focus:ring-gray-200' : 'text-gray-950 hover:bg-gray-100 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600'" aria-expanded="false">
-                <span class="sr-only">Open main menu</span>
-                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-                </svg>
-            </button>
         </div>
-        <div class="z-20 items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="navbar-sticky">
+        <div class="z-20 items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1 pl-8" id="navbar-sticky">
             <ul class="bg-transparent dark:bg-transparent flex p-4 lg:p-0 font-bold text-xl rounded-lg flex-row space-x-8 mt-0 border-0">
                 <li *ngFor="let linkItem of links">
                     <a [routerLink]="[linkItem.link]" class="block py-2 pl-3 pr-4 rounded hover:text-amber-600 p-0 dark:hover:text-amber-600" [ngClass]="isHome ? 'text-white dark:text-white' : 'dark:text-white text-gray-950'">{{ linkItem.name }}</a>
                 </li>
-                <li class="inline-flex py-2 lg:py-0">
+                <li class="inline-flex py-2">
                     <a href="https://www.instagram.com/eliooboy?r=nametag" target="_blank" class="block pl-3 pr-3 rounded">
                         <svg class="animate-[spin_1s_ease-in-out] w-7 h-7 block rounded hover:text-amber-600 p-0 dark:hover:text-amber-600" [ngClass]="isHome ? 'text-white dark:text-white' : 'dark:text-white text-gray-950'" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" viewBox="0 0 50 50">
                             <path d="M 16 3 C 8.8324839 3 3 8.8324839 3 16 L 3 34 C 3 41.167516 8.8324839 47 16 47 L 34 47 C 41.167516 47 47 41.167516 47 34 L 47 16 C 47 8.8324839 41.167516 3 34 3 L 16 3 z M 16 5 L 34 5 C 40.086484 5 45 9.9135161 45 16 L 45 34 C 45 40.086484 40.086484 45 34 45 L 16 45 C 9.9135161 45 5 40.086484 5 34 L 5 16 C 5 9.9135161 9.9135161 5 16 5 z M 37 11 A 2 2 0 0 0 35 13 A 2 2 0 0 0 37 15 A 2 2 0 0 0 39 13 A 2 2 0 0 0 37 11 z M 25 14 C 18.936712 14 14 18.936712 14 25 C 14 31.063288 18.936712 36 25 36 C 31.063288 36 36 31.063288 36 25 C 36 18.936712 31.063288 14 25 14 z M 25 16 C 29.982407 16 34 20.017593 34 25 C 34 29.982407 29.982407 34 25 34 C 20.017593 34 16 29.982407 16 25 C 16 20.017593 20.017593 16 25 16 z"/>
@@ -75,11 +68,22 @@
     </div>
 </nav>
 
+<button 
+    (click)="toggleNavbar()" 
+    id="collapse-navbar-button" 
+    type="button"
+    class="z-40 !fixed ml-auto top-8 right-8 bg-opacity-40 dark:bg-opacity-40 text-gray-950 dark:text-white hover:bg-gray-400 rounded-full bg-gray-200 border-4 border-gray-500 text-sm w-10 h-10 inline-flex justify-center items-center dark:hover:bg-gray-500 dark:bg-gray-700 dark:border-gray-300 lg:hidden" 
+    aria-expanded="false">
+    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+    </svg>
+</button>
+
 <button
   type="button"
   data-te-ripple-init
   data-te-ripple-color="light"
-  class="z-30 !fixed top-5 right-5 hidden rounded-full bg-gradient-to-b from-lime-300 to-orange-300 p-3 text-xs font-medium uppercase leading-tight text-white dark:text-black shadow-md transition duration-150 ease-in-out focus:ring-0 hover:animate-bounce"
+  class="z-30 !fixed ml-auto top-8 right-8 bg-opacity-40 dark:bg-opacity-40 text-gray-950 dark:text-white hover:bg-gray-400 rounded-full bg-gray-200 border-4 border-gray-500 text-sm w-10 h-10 inline-flex justify-center items-center dark:hover:bg-gray-500 dark:bg-gray-700 dark:border-gray-300 uppercase leading-tight font-medium"
   id="btn-back-to-top">
   <svg
     aria-hidden="true"
