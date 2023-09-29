@@ -346,8 +346,7 @@ export class ExcursionsComponent implements OnInit, OnDestroy, AfterViewInit{
   }
 
   ngAfterViewInit(): void {
-    this.enableAllModal();
-    this.enableAllCarousel();
+    this.enableAllModalAllCarousel();
   }
 
   ngOnDestroy(): void {
@@ -360,7 +359,7 @@ export class ExcursionsComponent implements OnInit, OnDestroy, AfterViewInit{
     })
   }
 
-  enableAllModal(): void{
+  enableAllModalAllCarousel(): void{
     const modalOptions: ModalOptions = {
       placement: 'top-center',
       backdrop: 'dynamic',
@@ -374,11 +373,7 @@ export class ExcursionsComponent implements OnInit, OnDestroy, AfterViewInit{
       const element = <HTMLElement>document.getElementById(excur.varName + '-modal');
       const modalEl: ModalInterface = new Modal(element, modalOptions);
       this.modals.set(excur.varName+'Modal', modalEl);
-    })
-  }
 
-  enableAllCarousel(): void{
-    this.excurions.forEach( (excur) => {
       var items: CarouselItem[] = []
       var optionItem = []
       for(let i=1; i <= excur.imgsArray.length; i++){
