@@ -1,4 +1,4 @@
-import { Component ,OnInit, OnDestroy, AfterViewInit } from '@angular/core';
+import { Component, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
 import { Modal, Carousel } from 'flowbite';
 import type { ModalOptions, ModalInterface, CarouselItem, CarouselOptions, CarouselInterface } from 'flowbite'
 
@@ -341,21 +341,19 @@ export class ExcursionsComponent implements OnInit, OnDestroy, AfterViewInit{
   ]
   private modals = new Map<string, ModalInterface>();
 
-  ngOnInit(): void {
-    
-  }
+  ngOnInit(): void { }
 
   ngAfterViewInit(): void {
     this.enableAllModalAllCarousel();
   }
 
   ngOnDestroy(): void {
-      this.closeAllModal();
+    this.closeAllModal();
   }
 
   closeAllModal(): void{
-    ['safarBlueModal', 'safarSardModal', 'goldBeachModal', 'mgrModal', 'marafaModal', 'gedeModal', 'malindiModal', 'malindiNightModal', 'amoreModal', 'dabasoModal', 'garodaModal', 'jacarandaModal', 'breezeModal', 'midaCreekModal', 'falconeriaModal', 'hallerParkModal'].forEach( (modalVar) => {
-      this.closeModal(modalVar)
+    this.excurions.forEach( (modal) => {
+      this.closeModal(modal.varName + 'Modal')
     })
   }
 

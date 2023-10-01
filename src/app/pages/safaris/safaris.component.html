@@ -14,7 +14,7 @@
     <h5 class="text-center py-4 relative z-10 font-bold text-xl leading-none text-gray-900 dark:text-white">Abbigliamento</h5>
     <p class="text-gray-800 dark:text-gray-400 text-center px-16 pb-6">
         L'abbigliamento da safari è piuttosto simile all'abbigliamento da trekking: si prediligono i colori chiari per non infastidire gli animali.<br>
-        È consigliato portare un cappello per ripararsi dal sole, occhiali da sole per proteggere gli occhi dalla sabbia delle piste in terra battuta.
+        È consigliato portare un cappello per ripararsi dal sole, occhiali da sole per proteggere gli occhi dalla sabbia delle piste in terra battuta, abbigliamento più pesante per la sera, antizanzare tropicale, crema solare, adattatore tipo G per presa di corrente.
     </p>
     <h5 class="text-center py-4 relative z-10 font-bold text-xl leading-none text-gray-900 dark:text-white">Alloggi</h5>
     <p class="text-gray-800 dark:text-gray-400 text-center px-16 pb-6">
@@ -36,7 +36,37 @@
     </p>
     <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 px-12 py-12 max-w-6xl mx-auto">
 
-
+        <div *ngFor="let safari of safarisWatamu" class="flex flex-col bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-900 dark:border-gray-700">
+            <button class="w-full" (click)="openModal(safari.varName + 'Modal')">
+                <img class="h-72 sm:h-80 object-none w-full rounded-t-lg hover:scale-110 transition duration-500" src="{{ safari.imgFolder + safari.thumbnail }}" alt="" />
+            </button>
+            <div class="px-5 pt-5">
+                <button (click)="openModal(safari.varName + 'Modal')" class="text-left">
+                    <h5 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ safari.title }}</h5>
+                    <h6 class="mb-2 text-lg font-bold tracking-tight text-gray-700 dark:text-gray-300">{{ safari.duration | lowercase }}</h6>
+                </button>
+                <div class="flex items-center text-gray-400 pb-3">
+                    <svg class="w-4 h-4 mr-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.8159 20.6077C16.8509 18.5502 20 15.1429 20 11C20 6.58172 16.4183 3 12 3C7.58172 3 4 6.58172 4 11C4 15.1429 7.14909 18.5502 11.1841 20.6077C11.6968 20.8691 12.3032 20.8691 12.8159 20.6077Z" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M15 11C15 12.6569 13.6569 14 12 14C10.3431 14 9 12.6569 9 11C9 9.34315 10.3431 8 12 8C13.6569 8 15 9.34315 15 11Z" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    {{ safari.place }}
+                </div>
+            </div>
+            <div class="mt-auto mb-0 px-5 pb-5">
+                <hr class="my-3 border-gray-200 sm:mx-auto dark:border-gray-700" />
+                <div class="flex justify-items-end">
+                    <span class="items-center inline-flex text-md font-semibold text-gray-900 dark:text-white ml-0 mr-1">da </span>
+                    <span class="items-center inline-flex text-xl font-bold text-amber-600 text-left ml-0 mr-auto">{{ safari.price }}</span>
+                    <button (click)="openModal(safari.varName + 'Modal')" class="inline-flex items-center px-3 py-2 mr-0 ml-auto text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        Info
+                        <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
     
     </div>
 </section>
