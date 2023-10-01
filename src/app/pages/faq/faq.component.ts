@@ -77,11 +77,16 @@ export class FaqComponent implements OnInit, AfterViewInit {
 
     const options: AccordionOptions = {
       alwaysOpen: false,
-      activeClasses: 'text-gray-900 dark:text-whit',
+      activeClasses: 'text-gray-900 dark:text-white',
       inactiveClasses: 'text-gray-700 dark:text-gray-400',
-      onOpen: () => { },
-      onClose: () => { },
-      onToggle: () => { },
+      onOpen: (item) => { },
+      onClose: (item) => { },
+      onToggle: (item) => { 
+        item._items.forEach( (el) => {
+          el.triggerEl.querySelectorAll('svg')[1].classList.remove('rotate-180')
+        })
+        item._items.find( el => el.active)?.triggerEl.querySelectorAll('svg')[1].classList.add('rotate-180')
+      },
     };
 
     const accordion: AccordionInterface = new Accordion(accordionItems, options);
