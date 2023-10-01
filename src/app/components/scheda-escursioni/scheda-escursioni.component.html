@@ -1,0 +1,278 @@
+<div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 px-12 py-12 max-w-6xl mx-auto">
+
+    <div *ngFor="let figa of fighe">
+        <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-900 dark:border-gray-700">
+            <button class="w-full" (click)="openModal('safarBlueModal')">
+                <img class="h-72 sm:h-80 object-none w-full rounded-t-lg hover:scale-110 transition duration-500"
+                    src="/assets/img/excursions/sardegna/sardegna_1.jpg" alt="" />
+            </button>
+            <div class="p-5">
+                <button (click)="openModal('safarBlueModal')" class="text-left">
+                    <h5 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{figa.title}}
+                    </h5>
+                    <h6 class="mb-2 text-lg font-bold tracking-tight text-gray-700 dark:text-gray-300">
+                        {{figa.sub_title}}
+                    </h6>
+                </button>
+                <div class="flex items-center text-gray-400 pb-3">
+                    <svg class="w-4 h-4 mr-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12.8159 20.6077C16.8509 18.5502 20 15.1429 20 11C20 6.58172 16.4183 3 12 3C7.58172 3 4 6.58172 4 11C4 15.1429 7.14909 18.5502 11.1841 20.6077C11.6968 20.8691 12.3032 20.8691 12.8159 20.6077Z"
+                            stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M15 11C15 12.6569 13.6569 14 12 14C10.3431 14 9 12.6569 9 11C9 9.34315 10.3431 8 12 8C13.6569 8 15 9.34315 15 11Z"
+                            stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    {{figa.position}}
+                </div>
+                <hr class="my-3 border-gray-200 sm:mx-auto dark:border-gray-700" />
+                <div class="flex justify-items-end">
+                    <span
+                        class="items-center inline-flex text-md font-semibold text-gray-900 dark:text-white ml-0 mr-1">da
+                    </span>
+                    <span
+                        class="items-center inline-flex text-xl font-bold text-amber-600 text-left ml-0 mr-auto">{{figa.price}}</span>
+                    <button (click)="openModal('safarBlueModal')"
+                        class="inline-flex items-center px-3 py-2 mr-0 ml-auto text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        Info
+                        <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 14 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M1 5h12m0 0L9 1m4 4L9 9" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+<!-- <div *ngFor="let figaa of figheBrutte"> -->
+<div id="safari-blue-modal" tabindex="-1"
+    class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative w-full max-w-7xl max-h-full">
+        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+            <button (click)="closeModal('safarBlueModal')" type="button"
+                class="z-40 sticky float-right mr-5 top-5 text-gray-400 hover:bg-gray-400 hover:text-gray-900 rounded-full bg-gray-200 border-4 border-gray-500 text-sm w-10 h-10 inline-flex justify-center items-center dark:hover:bg-gray-500 dark:bg-gray-700 dark:border-gray-300 dark:hover:text-white">
+                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 14 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                </svg>
+                <span class="sr-only">Close modal</span>
+            </button>
+            <div class="p-6 border-b rounded-t dark:border-gray-600">
+                <h2 class="font-potato text-2xl text-gray-900 dark:text-white">
+                    SAFARI BLUE GARODA
+                </h2>
+                <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200">
+                    Giornata intera
+                </h3>
+                <div class="flex items-center text-gray-400 pt-3 text-md">
+                    <svg class="w-6 h-6 mr-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12.8159 20.6077C16.8509 18.5502 20 15.1429 20 11C20 6.58172 16.4183 3 12 3C7.58172 3 4 6.58172 4 11C4 15.1429 7.14909 18.5502 11.1841 20.6077C11.6968 20.8691 12.3032 20.8691 12.8159 20.6077Z"
+                            stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M15 11C15 12.6569 13.6569 14 12 14C10.3431 14 9 12.6569 9 11C9 9.34315 10.3431 8 12 8C13.6569 8 15 9.34315 15 11Z"
+                            stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    Parco Marino & Mangrovie & Garoda
+                </div>
+            </div>
+            <div class="p-6 bg-orange-100 dark:bg-gray-800 grid grid-cols-1 gap-6 md:grid-cols-2">
+                <div class="relative items-center h-72 sm:h-96 lg:h-[28rem] px-6">
+                    <div class="relative h-72 overflow-hidden rounded-lg sm:h-96 lg:h-[28rem]">
+                        <div class="hidden duration-700 ease-in-out" id="carousel-safari-blue-item-1">
+                            <img src="/assets/img/excursions/safari_blue/safari_blue_1.jpeg"
+                                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                        </div>
+                        <div class="hidden duration-700 ease-in-out" id="carousel-safari-blue-item-2">
+                            <img src="/assets/img/excursions/safari_blue/safari_blue_2.jpeg"
+                                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                        </div>
+                        <div class="hidden duration-700 ease-in-out" id="carousel-safari-blue-item-3">
+                            <img src="/assets/img/excursions/safari_blue/safari_blue_3.jpeg"
+                                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                        </div>
+                        <div class="hidden duration-700 ease-in-out" id="carousel-safari-blue-item-4">
+                            <img src="/assets/img/excursions/safari_blue/safari_blue_4.jpeg"
+                                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                        </div>
+                        <div class="hidden duration-700 ease-in-out" id="carousel-safari-blue-item-5">
+                            <img src="/assets/img/excursions/safari_blue/safari_blue_5.jpg"
+                                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                        </div>
+                        <div class="hidden duration-700 ease-in-out" id="carousel-safari-blue-item-6">
+                            <img src="/assets/img/excursions/safari_blue/safari_blue_6.jpeg"
+                                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                        </div>
+                        <div class="hidden duration-700 ease-in-out" id="carousel-safari-blue-item-7">
+                            <img src="/assets/img/excursions/safari_blue/safari_blue_7.jpg"
+                                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                        </div>
+                        <div class="hidden duration-700 ease-in-out" id="carousel-safari-blue-item-8">
+                            <img src="/assets/img/excursions/safari_blue/safari_blue_8.jpeg"
+                                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                        </div>
+                        <div class="hidden duration-700 ease-in-out" id="carousel-safari-blue-item-9">
+                            <img src="/assets/img/excursions/safari_blue/safari_blue_9.jpg"
+                                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                        </div>
+                        <div class="hidden duration-700 ease-in-out" id="carousel-safari-blue-item-10">
+                            <img src="/assets/img/excursions/safari_blue/safari_blue_10.jpeg"
+                                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                        </div>
+                        <div class="hidden duration-700 ease-in-out" id="carousel-safari-blue-item-11">
+                            <img src="/assets/img/excursions/safari_blue/safari_blue_11.jpeg"
+                                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                        </div>
+                        <div class="hidden duration-700 ease-in-out" id="carousel-safari-blue-item-12">
+                            <img src="/assets/img/excursions/safari_blue/safari_blue_12.jpeg"
+                                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                        </div>
+                        <div class="hidden duration-700 ease-in-out" id="carousel-safari-blue-item-13">
+                            <img src="/assets/img/excursions/safari_blue/safari_blue_13.jpeg"
+                                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                        </div>
+                    </div>
+                    <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
+                        <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1"
+                            id="carousel-safari-blue-indicator-1"></button>
+                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2"
+                            id="carousel-safari-blue-indicator-2"></button>
+                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3"
+                            id="carousel-safari-blue-indicator-3"></button>
+                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4"
+                            id="carousel-safari-blue-indicator-4"></button>
+                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5"
+                            id="carousel-safari-blue-indicator-5"></button>
+                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 6"
+                            id="carousel-safari-blue-indicator-6"></button>
+                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 7"
+                            id="carousel-safari-blue-indicator-7"></button>
+                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 8"
+                            id="carousel-safari-blue-indicator-8"></button>
+                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 9"
+                            id="carousel-safari-blue-indicator-9"></button>
+                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 10"
+                            id="carousel-safari-blue-indicator-10"></button>
+                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 11"
+                            id="carousel-safari-blue-indicator-11"></button>
+                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 12"
+                            id="carousel-safari-blue-indicator-12"></button>
+                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 13"
+                            id="carousel-safari-blue-indicator-13"></button>
+                    </div>
+                    <button type="button"
+                        class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                        id="carousel-safari-blue-prev">
+                        <span
+                            class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                            <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M5 1 1 5l4 4" />
+                            </svg>
+                            <span class="hidden">Previous</span>
+                        </span>
+                    </button>
+                    <button type="button"
+                        class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                        id="carousel-safari-blue-next">
+                        <span
+                            class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                            <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m1 9 4-4-4-4" />
+                            </svg>
+                            <span class="hidden">Next</span>
+                        </span>
+                    </button>
+                </div>
+                <div>
+                    <span
+                        class="items-center inline-flex text-md font-semibold text-gray-900 dark:text-white ml-0 mr-1">Prezzo
+                        da </span>
+                    <span
+                        class="mb-4 items-center inline-flex text-xl font-bold text-amber-600 text-left ml-0 mr-auto">€60</span>
+                    <h2 class="mb-2 text-xl font-semibold text-gray-900 dark:text-white">Programma</h2>
+                    <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+                        Partenza dal vostro villaggio alle <strong>08:00</strong> circa per andare 🚙 a prendere una
+                        barca con il fondo di vetro, equipaggiata di maschere, pinne e salvagenti.<br>
+                        Nel tragitto si potrà del sole dal tettuccio della barca stessa.
+                    </p>
+                    <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+                        La prima tappa è il parco marino, dove si potrà ammirare il fondale spettacolare - con
+                        tantissimi <strong>pesci colorati</strong> 🪸 🐡 🐠 🐟 - e si potrà fare
+                        <strong>snorkeling</strong> 🤿.
+                    </p>
+                    <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+                        La tappa successiva è la 🏖 spiaggia di <strong>Garoda</strong>, per fare un bagno nelle
+                        acque
+                        cristalline e abbronzarsi un po' al sole ☀️.
+                    </p>
+                    <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+                        Si proseguire poi lungo il canale di mangrovie dell'oceano indiano, dove raggiungeremo il
+                        cuore
+                        della foresta per ammirare da vicino fenicotteri rosa, aironi bianchi e neri,
+                        cicogne,...<br>
+                    </p>
+                    <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+                        Sosta per il <strong>pranzo</strong> su un isoletta paradisiaca di nome "SUDI" dove verrà
+                        allestito un ricco pranzo con riso al latte di cocco e sugo di polpo, grigliata di pesce,
+                        aragosta , gamberi, frutta e bevanda.<br>
+                        Qui ci sarà anche tempo di rilassarsi o fare un giro in canoa all'interno delle mangrovie.
+                    </p>
+                    <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+                        🛺 Rientro al villaggio verso le <strong>16:30</strong>.
+                    </p>
+                </div>
+            </div>
+            <div class="p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
+                <h2 class="pb-4 font-semibold text-2xl text-gray-900 dark:text-white">
+                    Incluso
+                </h2>
+                <ul class="space-y-1 list-inside text-base leading-relaxed text-gray-500 dark:text-gray-400">
+                    <li class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-green-500 mr-2 flex-shrink-0"
+                            aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+                            <path
+                                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                        </svg>
+                        Barca con fondo di vetro, attrezzata per snorkeling e tettuccio soprelevato
+                    </li>
+                    <li class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-green-500 mr-2 flex-shrink-0"
+                            aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+                            <path
+                                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                        </svg>
+                        Guida turistica in lingua italiana
+                    </li>
+                    <li class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-green-500 mr-2 flex-shrink-0"
+                            aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+                            <path
+                                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                        </svg>
+                        Biglietto di ingresso al Parco Marino
+                    </li>
+                    <li class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-green-500 mr-2 flex-shrink-0"
+                            aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+                            <path
+                                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                        </svg>
+                        Pranzo a base di pesce - possibilità di carne o vegetariano - e bevande
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- </div> -->

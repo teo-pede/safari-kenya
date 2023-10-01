@@ -11,6 +11,8 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { FaqComponent } from './pages/faq/faq.component';
 import { SafarisComponent } from './pages/safaris/safaris.component';
 import { ExcursionsComponent } from './pages/excursions/excursions.component';
+import { SchedaEscursioniComponent } from './components/scheda-escursioni/scheda-escursioni.component';
+import { SchedaEscursioniComponentInsideComponent } from './components/scheda-escursioni-component-inside/scheda-escursioni-component-inside.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { ExcursionsComponent } from './pages/excursions/excursions.component';
     ContactComponent,
     FaqComponent,
     SafarisComponent,
-    ExcursionsComponent
+    ExcursionsComponent,
+    SchedaEscursioniComponent,
+    SchedaEscursioniComponentInsideComponent,
   ],
   imports: [
     BrowserModule,
