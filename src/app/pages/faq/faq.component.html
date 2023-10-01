@@ -21,7 +21,7 @@
                     </button>
                 </h2>
                 <div id="{{ 'accordion-flush-body-' + i }}" class="hidden" [attr.aria-labelledby]="'accordion-flush-heading-' + i">
-                    <div class="py-5 text-lg font-semibold border-b border-gray-200 dark:border-gray-700">
+                    <div class="py-5 text-lg font-semibold border-b-0 border-gray-200 dark:border-gray-700">
                         <p *ngFor="let ans of faq.answer" class="mb-2 text-gray-800 dark:text-gray-400" [innerHTML]="ans"></p>
                     </div>
                 </div>
