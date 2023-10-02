@@ -117,7 +117,12 @@ export class SafarisComponent implements OnInit, OnDestroy, AfterViewInit {
           this.scroll(<HTMLElement>item._items.find( el => el.active)?.triggerEl)
         },
         onClose: (item) => { },
-        onToggle: (item) => { },
+        onToggle: (item) => {
+          item._items.forEach( (el) => {
+            el.triggerEl.querySelectorAll('svg')[1].classList.remove('rotate-180')
+          })
+          item._items.find( el => el.active)?.triggerEl.querySelectorAll('svg')[1].classList.add('rotate-180')
+        },
       };
       const accordion: AccordionInterface = new Accordion(accordionItems, optionsAccord);
       accordion.open('accordion-' + safari.varName + '-heading-1');

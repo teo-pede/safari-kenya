@@ -146,14 +146,23 @@
                                 <li *ngFor="let programItem of safariDetail.programs; let i = 'index+1'" class="mb-10 ml-4">
                                     <button id="{{ 'accordion-' + safariDetail.varName + '-heading-' + i }}" type="button" class="p-2 rounded-lg w-full text-left" [attr.aria-expanded]="i == 1" [attr.aria-controls]="'accordion-' + safariDetail.varName + '-body-' + i">
                                         <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
-                                        <time class="block mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">{{ i }}° giorno</time>
-                                        <h3 class="inline-flex items-center text-lg font-semibold text-gray-900 dark:text-white">
-                                            <svg class="w-4 h-4 mr-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M12.8159 20.6077C16.8509 18.5502 20 15.1429 20 11C20 6.58172 16.4183 3 12 3C7.58172 3 4 6.58172 4 11C4 15.1429 7.14909 18.5502 11.1841 20.6077C11.6968 20.8691 12.3032 20.8691 12.8159 20.6077Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                                <path d="M15 11C15 12.6569 13.6569 14 12 14C10.3431 14 9 12.6569 9 11C9 9.34315 10.3431 8 12 8C13.6569 8 15 9.34315 15 11Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                            </svg>
-                                            {{ safariDetail.dailyPlace[i-1] }}
-                                        </h3>
+                                        <div class="inline-flex items-center justify-between w-full">
+                                            <div>
+                                                <time class="block mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">{{ i }}° giorno</time>
+                                                <h3 class="inline-flex items-center text-lg font-semibold text-gray-900 dark:text-white">
+                                                    <svg class="w-4 h-4 mr-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M12.8159 20.6077C16.8509 18.5502 20 15.1429 20 11C20 6.58172 16.4183 3 12 3C7.58172 3 4 6.58172 4 11C4 15.1429 7.14909 18.5502 11.1841 20.6077C11.6968 20.8691 12.3032 20.8691 12.8159 20.6077Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        <path d="M15 11C15 12.6569 13.6569 14 12 14C10.3431 14 9 12.6569 9 11C9 9.34315 10.3431 8 12 8C13.6569 8 15 9.34315 15 11Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    </svg>
+                                                    {{ safariDetail.dailyPlace[i-1] }}
+                                                </h3>
+                                            </div>
+                                            <div class="pr-4">
+                                                <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0 text-gray-900 dark:text-gray-100" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+                                                </svg>
+                                            </div>
+                                        </div>
                                     </button>
                                     <p id="{{ 'accordion-' + safariDetail.varName + '-body-' + i }}" class="hidden mb-4 text-base font-normal text-gray-500 dark:text-gray-400" [attr.aria-labelledby]="'accordion-' + safariDetail.varName + '-heading-' + i" [innerHTML]="programItem"></p>
                                 </li>
