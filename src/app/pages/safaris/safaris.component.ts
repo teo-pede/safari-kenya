@@ -178,7 +178,7 @@ export class SafarisComponent implements OnInit, OnDestroy, AfterViewInit {
       ]
     },
     {
-      thumbnail: 'tzawo_east_ambo_west_2.jpg',
+      thumbnail: 'tzawo_east_ambo_west_6.jpg',
       imgFolder: '/assets/img/safaris/tzawo_east_ambo_west/',
       title: 'TZAWO WEST + AMBOSELI + TZAWO EAST da Mombasa',
       duration: '4 giorni e 3 notti',
@@ -220,7 +220,7 @@ export class SafarisComponent implements OnInit, OnDestroy, AfterViewInit {
         "🚙 Partenza alle 04:00 dal vostro villaggio.<br>Faremo colazione ☕️ tutti insieme per poi procedere, percorrendo la strada principale che porta da Malindi fino al raccordo per Mombasa, fino alla città di <strong>Voi</strong>, quindi arriveremo all'entrata dello <strong>Tsawo Ovest (Tsavo Riva)</strong> verso le <strong>09:00</strong> circa.<br>Questo è il parco più caratteristico per la presenza di montagne, laghi e fiumi, dove risiedono le famiglie più numerose di animali ed in particolare di felini 🦁, data la presenza di tanti alberi.<br>Inizieremo il safari per vedere gli animali della savana - elefanti 🐘, zebre 🦓, giraffe 🦒, leoni 🦁, ghepardi 🐆, leopardi. Verso le 13:30 arriveremo al campo tendato/lodge per il check-in, pranzare 🍽 e riposare un poco. Ripartiremo per il game drive verso le 15:30 dirigendoci verso il <strong>Rhino Santuary</strong>, così chiamato perché è un facile punto di avvistamento dei rinoceronti 🦏. Rientro al lodge/campo verso le 18:30 per la cena ed il pernottamento 🛏.",
         "⏰ Sveglia alle <strong>06:00</strong>, colazione ☕️ e partenza verso le 07:00 per il game drive fino alle 09:00. Ci dirigeremo verso il <strong>Mzima Spring</strong>, dove si trovano le sorgenti del fiume <strong>Tsavo</strong>, popolate da ippopotami 🦛 e coccodrilli 🐊. Uscendo dal parco, prenderemo la strada che attraversa il Parco Tsavo East e Tsavo West in direzione del Monte Kilimanjaro e del <strong>Parco Amboseli</strong>, dove arriveremo verso le <strong>12:00</strong> all'entrata <i>'Irimito'</i>. Altro game drive fino alle 13:30, quando arriveremo al campo tendato/lodge per il check-in, pranzo 🍽 ed un poco di meritato riposo fino alle 15:30.<br>Ripartiremo per il successivo game drive verso il lago <strong>Amboseli</strong> per vedere ippopotami 🦛 e bufali 🐃 salendo verso l'Amboseli Hill per ammirare il panorama fino al tramonto. Verso le 18:30 torneremo al campo/lodge per la cena ed il pernottamento 🛏.",
         "⏰ Sveglia alle <strong>06:00</strong>, colazione ☕️ e partenza verso le 07:00 per il game drive fino alle 09:00 per poi dirigerci verso il <strong>Parco Tsavo East</strong> all'entrata <i>'Manyani Gate'</i> che arriveremo verso le 11:00.<br>Inizieremo subito il game drive fino alle 13:30 quando arriveremo al campo tendato/lodge per il consuento check-in, pranzo 🍽 e riposo.<br>Alle 15:30 ripartiremo per il game drive alla ricerca degli animali verso le zone migliori del parco - lago <i>Aruba</i> e <i>Kanderi Swamp</i> - fino al tramonto per poi far rientro al campo tendato/lodge per la cena ed il pernottamento 🛏.",
-        "⏰ Sveglia alle <strong>06:00</strong>, colazione ☕️ e partenza alle 07:00 per il game drive nel parco, verso le cascate <strong>Lugards Falls</strong> che si trovano nel fiume <strong>Galana</strong> che attraversa tutta la savana fino a Malindi e, a seconda della zona che attraversa, prende un nome diverso. Lo stesso fiume viene chiamato infatti in 3 modi diversi: <i>Galana</i>, <i>Sabaki</i> e <i>Athi River</i>. Il giro continuerà fino alle 10:30/11:00 seguendo il fiume nei diversi punti di avvistamento degli animali come ippopotami 🦛, coccodrilli 🐊.<br>Faremo anche un piccolo giro a piedi per vedere coccodrilli 🐊, scimmie 🐒 e vari tipi di uccelli.<br>Pranzo 🍽 e verso le 14:00 ripartiremo verso Watamu, dove arriveremo verso le <strong>16:30</strong> circa."
+        "⏰ Sveglia alle <strong>06:00</strong>, colazione ☕️ e partenza alle 07:00 per il game drive nel parco, verso le cascate <strong>Lugards Falls</strong> che si trovano nel fiume <strong>Galana</strong> che attraversa tutta la savana fino a Malindi e, a seconda della zona che attraversa, prende un nome diverso. Lo stesso fiume viene chiamato infatti in 3 modi diversi: <i>Galana</i>, <i>Sabaki</i> e <i>Athi River</i>. Il giro continuerà fino alle 10:30/11:00 seguendo il fiume nei diversi punti di avvistamento degli animali come ippopotami 🦛, coccodrilli 🐊.<br>Faremo anche un piccolo giro a piedi per vedere coccodrilli 🐊, scimmie 🐒 e vari tipi di uccelli.<br>Pranzo 🍽 e verso le 14:00 ripartiremo verso Watamu 🏬, dove arriveremo verso le <strong>16:30</strong> circa."
       ],
       dailyPlace: ['Tzawo West','Amboseli','Amboseli + Tzawo East', 'Tzawo East'],
       included: [
@@ -238,20 +238,119 @@ export class SafarisComponent implements OnInit, OnDestroy, AfterViewInit {
       ]
     },
     {
-      thumbnail: '',
-      imgFolder: '',
-      title: '',
-      duration: '',
+      thumbnail: 'ambo_taita_4.jpeg',
+      imgFolder: '/assets/img/safaris/ambo_taita/',
+      title: 'AMBOSELI + TAITA HILLS',
+      duration: '3 giorni e 2 notti',
       price: '',
-      place: '',
-      varName: '',
-      imgsArray: [],
-      programs: [],
-      dailyPlace: [],
+      place: 'Amboseli + Taita Hills',
+      varName: 'amboTaita',
+      imgsArray: ['ambo_taita_1.jpeg','ambo_taita_2.jpeg','ambo_taita_3.jpeg','ambo_taita_4.jpeg','ambo_taita_5.jpeg','ambo_taita_6.jpeg'],
+      programs: [
+        "🚙 Partenza alle 04:00 dal vostro villaggio direzione <strong>Riserva Taita Hills</strong>.<br>Alle 12:30 arrivo alla riserva e pranzo 🍽 al lodge/campo prescelto. Dopo una pausa, alle 16:00, partenza per il safari fino al tramonto.<br>Rientro al campo alle 18:00 per la cena.<br>Alle ore <strong>20:30</strong> si esce per il game drive notturno.<br>Rientro al campo per il pernottamento 🛏 previsto per le 22:30.",
+        "⏰ Sveglia alle <strong>06:00</strong>, colazione ☕️ e partenza per le 06:30 diretti al <strong>Parco Nazionale Amboseli</strong>.<br>Alle 12:30 è previsto l'arrivo al campo/lodge, assegnazione delle camere e consumazione del pranzo 🍽.<br>Alle 16:00 safari fino al tramonto - verso le 18:00 - per poi rientrare al campo per la cena e pernottamento 🛏.",
+        "⏰ Sveglia alle <strong>06:00</strong>, colazione ☕️ e mezz'ora dopo ultimo safari prima del rientro.<br>Usciremo dal parco verso le 09:30 per iniziare il rientro.<br>Pausa pranzo 🍽 alle 12:30 e arrivo in hotel 🏬 verso le <strong>17:30</strong>."
+      ],
+      dailyPlace: ['Taita Hills','Amboseli','Amboseli'],
       included: [
         'Tutti i trasferimenti a bordo di fuoristrada con tetto panoramico apribile',
-        "Biglietto d'ingresso alle rovine di Gede con guida specializzata (in italiano)",
+        "Biglietto d'ingresso al parco Amboseli",
+        "Biglietto d'ingresso al parco Taita Hills",
+        'Pernottamento in lodge/camp con pensione completa (escluse le bevande)',
+        'Acqua minerale durante tutti i game drive',
+        "Autista e/o guida (in italiano) con regolare licenza abilitati per safari (in periodo di alta stagione l'autista e la guida possono essere la stessa persona)"
+      ],
+      excluded: [
+        'Bevande durante i pasti nei campi/lodge',
+        'Mance ed eventuali extra personali'
+      ]
+    },
+    {
+      thumbnail: 'masai_mara_3.jpeg',
+      imgFolder: '/assets/img/safaris/masai_mara/',
+      title: 'MASAI MARA',
+      duration: '3 giorni e 2 notti',
+      price: '',
+      place: 'Masai Mara',
+      varName: 'masaiMara',
+      imgsArray: ['masai_mara_1.jpeg','masai_mara_2.jpeg','masai_mara_3.jpeg','masai_mara_4.jpeg','masai_mara_5.jpeg'],
+      programs: [
+        "🚙 Partenza alle 07:30 dal vostro villaggio direzione ed arrivo all'aeroporto di Malindi per le 08:00 - l'orario del volo interno potrebbe variare a seconda del periodo - imbarco e volo 🛫 di 2 ore circa.<br>Arrivati all'aeroporto 🛬 del <strong>Masai Mara</strong>, si prende la jeep per il game drive fino alle 13:30, quando arriveremo al lodge/campo tendato. Check-in, pranzo 🍽 e relax fino alle 15:30.<br>Altro game drive fino al tramonto per poi rientrare al campo per cena e pernottamento 🛏.",
+        "⏰ Sveglia alle <strong>06:00</strong>, colazione ☕️ e alle 07:00 partenza per un game drive.<br>Durante i mesi di Luglio, Agosto e Settembre di può ammirare il fenomeno delle migrazioni dal <strong>Parco Serengeti</strong> al <strong>Masai Mara</strong>, quindi è il periodo migliore per visitare questo Parco. Durante i mesi di Dicembre e Gennaio il fenomeno delle migrazioni è dal Masai Mara verso il Parco Serengeti. Chi deciderà di visitare questo parco durante questi mesi avrà la possibilità di vedere gli animali cacciare, essendo il periodo più ricco di animali - caccia dei coccodrilli e dei felini. Collegati alla caccia ci saranno anche branchi di iene e avvoltoi che si cibano dei resti lasciati dai grandi felini.<br>Alle 13.00 pranzeremo 🍽 in mezzo alla savana, sulle sponde del fiume <strong>Mara River</strong>. Dopo il pranzo un po' di relax e poi fino al tramonto altro game drive.<br>Rientro al campo, cena e pernottamento 🛏.",
+        "⏰ Sveglia alle <strong>06:00</strong>, colazione ☕️ e poi partenza verso le 07:00 per il game drive.<br>Gireremo diverse zone del parco ricche di animali fino alle 12:00, quando torneremo al campo per il pranzo 🍽.<br>Ripartiremo alle 13:30 per raggiungere l'aeroporto, dove partiremo verso le 14:00 per Malindi.<br>Rientro ai rispettivi villaggi 🏬 verso le <strong>17:00</strong>"
+      ],
+      dailyPlace: ['Malindi aeroporto + Masai Mara','Masai Mara','Masai Mara + Malindi aeroporto'],
+      included: [
+        'Tutti i trasferimenti a bordo di fuoristrada con tetto panoramico apribile',
+        "Biglietto aereo",
+        'Assicurazione',
+        "Biglietto d'ingresso al parco Masai Mara",
+        'Macchina da/per aeroporto',
+        'Pernottamento in lodge/camp con pensione completa (escluse le bevande)',
+        'Acqua minerale durante tutti i game drive',
+        "Autista e/o guida (in italiano) con regolare licenza abilitati per safari (in periodo di alta stagione l'autista e la guida possono essere la stessa persona)"
+      ],
+      excluded: [
+        'Bevande durante i pasti nei campi/lodge',
+        'Mance ed eventuali extra personali'
+      ]
+    },
+    {
+      thumbnail: 'mara_nakuru_2.jpg',
+      imgFolder: '/assets/img/safaris/masai_mara_nakuru/',
+      title: 'MASAI MARA + LAGO NAKURU',
+      duration: '4 giorni e 3 notti',
+      price: '',
+      place: 'Masai Mara + lago Nakuru',
+      varName: 'maraNakuru',
+      imgsArray: ['mara_nakuru_1.jpeg','mara_nakuru_2.jpg','mara_nakuru_3.jpg','mara_nakuru_4.jpg','mara_nakuru_5.jpg','mara_nakuru_6.jpg'],
+      programs: [
+        "🛫 Partenza dall'aeroporto di Nairobi verso il Masai Mara - volo di circa 2 ore. Nel recarsi verso il parco faremo sosta al <strong>GreatRift Valley</strong> per fare foto - la Rift Valley attraversa tutto il Kenya fino alla Tanzania.<br>Successiva sosta per il pranzo 🍽 nella cittadina di <strong>Narok</strong>, a metà strada tra il Masai Mara e Nairobi. Arrivo al Parco Masai Mara per iniziare il game drive.<br>Durante i mesi di Luglio, Agosto e Settembre di può ammirare il fenomeno delle migrazioni dal <strong>Parco Serengeti</strong> al <strong>Masai Mara</strong>, quindi è il periodo migliore per visitare questo Parco. Durante i mesi di Dicembre e Gennaio il fenomeno delle migrazioni è dal Masai Mara verso il Parco Serengeti. Chi deciderà di visitare questo parco durante questi mesi avrà la possibilità di vedere gli animali cacciare, essendo il periodo più ricco di animali - caccia dei coccodrilli e dei felini. Collegati alla caccia ci saranno anche branchi di iene e avvoltoi che si cibano dei resti lasciati dai grandi felini.<br>Arrivo al lodge/campo tendato per check-in, cena e pernottamento 🛏.",
+        "⏰ Sveglia alle <strong>05:30</strong>, colazione ☕️ partenza per il game drive all'alba. Staremo tutto il giorno fuori, dall'alba al tramonto, per goderci i momenti più belli della vita nella savana.<br>Pranzeremo 🍽 verso le 13:00 in mezzo alla savana, sulle sponde del fiume <strong>Mara River</strong>. Dopo il pranzo un po' di relax e nuovo game drive fino al tramonto.<br>Rientro al campo, cena e pernottamento 🛏.",
+        "⏰ Sveglia alle <strong>06:00</strong> e colazione ☕️ per dirigerci al <strong>lago Nakuru</strong>, conosciuto in tutto il mondo per l'infinità di fenicotteri rosa 🦩 e per le varietà di uccelli che lo popolano. Il lago è circondato da boschi e colline rocciose abitati da rinoceronti 🦏 - sia neri che bianchi, leoni 🦁, giraffe 🦒 e molti altri animali.<br>Verso pranzo arriveremo al campo tendato/lodge. Dopo le consuete operazioni di check in, pranzeremo 🍽 e potremo riposarci un pò fino alle 15:00.<br>Nel pomeriggio safari fotografico al lago Nakuru fino al tramonto. Rientro al campo per la cena ed il pernottamento 🛏.",
+        "⏰ Sveglia alle <strong>06:00</strong>, colazione ☕️ e partenza per l'ultimo game drive.<br>Usciti dal parco ci dirigeremo verso la città di Nairobi, capitale del Kenya, per raggiungere l'aeroporto, per chi ha il volo, oppure l'hotel."
+      ],
+      dailyPlace: ['Malindi aeroporto + Masai Mara','Masai Mara','Masai Mara + lago Nakuru', 'Masai Mara + Malindi aeroporto'],
+      included: [
+        'Tutti i trasferimenti a bordo di fuoristrada con tetto panoramico apribile',
+        'Assicurazione',
+        "Biglietto d'ingresso al parco Masai Mara",
+        "Biglietto d'ingresso al lago Nakuru",
+        'Macchina da/per aeroporto',
+        'Pernottamento in lodge/camp con pensione completa (escluse le bevande)',
+        'Acqua minerale durante tutti i game drive',
+        "Autista e/o guida (in italiano) con regolare licenza abilitati per safari (in periodo di alta stagione l'autista e la guida possono essere la stessa persona)"
+      ],
+      excluded: [
+        'Bevande durante i pasti nei campi/lodge',
+        'Mance ed eventuali extra personali'
+      ]
+    },
+    {
+      thumbnail: 'naku_mara_ambo_tza_we_2.jpeg',
+      imgFolder: '/assets/img/safaris/nakuru_mara_ambo_tzawo_we/',
+      title: 'LAGO NAKURU + MASAI MARA + AMBOSELI + TZAVO WEST + TZAVO EAST',
+      duration: '7 giorni e 6 notti',
+      price: '',
+      place: 'Masai Mara + Amboseli + Tzawo West + Tzawo East',
+      varName: 'maraNakuruAmboTzawoWE',
+      imgsArray: ['naku_mara_ambo_tza_we_1.jpeg','naku_mara_ambo_tza_we_2.jpeg','naku_mara_ambo_tza_we_3.jpeg','naku_mara_ambo_tza_we_4.jpeg','naku_mara_ambo_tza_we_5.jpeg','naku_mara_ambo_tza_we_6.jpeg','naku_mara_ambo_tza_we_7.jpeg','naku_mara_ambo_tza_we_8.jpeg','naku_mara_ambo_tza_we_9.jpeg'],
+      programs: [
+        "🚙 Partenza per Nairobi, da qui si parte subito per il <strong>lago Naruku</strong> e si inizia il safari in jeep fino alle 13:00.<br>Si pranza 🍽 e ci si riposa fino alle 15:30, quando si riparte per il safari fino al tramonto.<br>Si rientra per la cena e pernottamento 🛏 presso il lodge.",
+        "⏰ Sveglia alle <strong>06:00</strong>, colazione ☕️ e si parte per il parco nazionale del <strong>Masai Mara</strong>.<br>Arrivati si inzia con il safari fino a pranzo 🍽.<br>Successivamente ci si riposa e nel pomeriggio si riparte per il safari fino al tramonto.<br>Al rientro, cena e pernottamento 🛏 presso il lodge.",
+        "Partiremo al mattino presto per un primo safari fotografico, rientro per la colazione ☕️ e poi si riparte per il secondo fotosafari.<br>Pranzeremo 🍽 nella zona attrezzata lungo il fiume <strong>Mara</strong> per poi ripartire con il safari fino al tramonto.<br>Al rientro, cena e pernottamento 🛏 presso il lodge.",
+        "Dopo la colazione ☕️ si parte per l'<strong>Amboseli</strong>.<br>All'arrivo si pranza 🍽 e nel pomeriggio si parte con il safari fino la tramonto.<br>Al rientro, cena e pernottamento 🛏 presso il lodge.",
+        "Partenza dall'Amboseli, dopo colazione ☕️, per raggiungere il parco nazionale <strong>Tzavo West</strong>. All'arrivo si parte con il safari fino a pranzo 🍽.<br>Nel pomeriggio secondo safari fino al tramonto, per poi rientrare per la cena e il pernottamento 🛏 presso il lodge.",
+        "Dopo colazione ☕️ si parte per raggiungere il parco nazionale <strong>Tzavo East</strong>. All'arrivo si và direttamnte a pranzo 🍽.<br>Nel pomeriggio si parte per il safari fino al tramonto; si rientra per la cena e pernottamento 🛏 presso il lodge.",
+        "Si parte dopo la prima colazione ☕️ per l'ultimo game drive fino alle 11:00.<br>Si ritorna al proprio resort passando per diversi villaggi, arrivando alle <strong>13:00</strong> circa."
+      ],
+      dailyPlace: ['lago Nakuru','Masai Mara','Masai Mara','Amboseli','Tzawo West','Tzawo East','Tzawo East'],
+      included: [
+        'Tutti i trasferimenti a bordo di fuoristrada con tetto panoramico apribile',
+        "Biglietto d'ingresso al parco Tsavo West",
         "Biglietto d'ingresso al parco Tsavo East",
+        "Biglietto d'ingresso al parco Amboseli",
+        "Biglietto d'ingresso al lago Nakuru",
         'Pernottamento in lodge/camp con pensione completa (escluse le bevande)',
         'Acqua minerale durante tutti i game drive',
         "Autista e/o guida (in italiano) con regolare licenza abilitati per safari (in periodo di alta stagione l'autista e la guida possono essere la stessa persona)"
