@@ -45,9 +45,9 @@ export class ExcursionsComponent implements OnInit, OnDestroy, AfterViewInit{
       varName: 'safarSard',
       imgsArray: ['sardegna_1.jpg', 'sardegna_2.jpeg', 'sardegna_3.jpeg', 'sardegna_4.jpeg', 'sardegna_5.jpeg', 'sardegna_6.jpeg', 'sardegna_7.jpg', 'sardegna_8.jpeg'],
       programs: [
-        'Partenza dal vostro villaggio alle <strong>08:00</strong> circa per andare 🚙 a prendere una barca con il fondo di vetro, equipaggiata di maschere, pinne e salvagenti.<br>Nel tragitto si potrà del sole dal tettuccio della barca stessa.',
+        'Partenza dal vostro villaggio alle <strong>08:00</strong> circa per andare 🚙 a prendere una barca con il fondo di vetro, equipaggiata di maschere, pinne e salvagenti.<br>Nel tragitto si potrà godere del sole dal tettuccio della barca stessa.',
         'La prima tappa è il parco marino, dove si potrà ammirare il fondale spettacolare - con tantissimi <strong>pesci colorati</strong> 🪸🐡🐠🐟 - e si potrà fare <strong>snorkeling</strong> 🤿.',
-        "Se la stagione è giusta - tra Novembre e Febbraio - prosegue navigando all'esterno della barriera corallina alla ricerca dei delfini 🐬.",
+        "Se la stagione è giusta - tra Novembre e Febbraio - proseguiremo navigando all'esterno della barriera corallina alla ricerca dei delfini 🐬.",
         'Verso le 12:00 si raggiunge la 🏖 spiaggia di <strong>Sardegna 2</strong>, Watamu, dove tra spettacolari atolli si potranno ammirare stelle marine, pesci palla e molto altro 🐡 🦀 🐚.<br>Qui verrà allestito un ricco pranzo sulla barca con riso al latte di cocco e sugo di polpo 🐙, pesce alla griglia, aragosta 🦞, gamberi 🦐, frutta e una bevanda a testa - previa richiesta sono previste alterntive come pollo 🍗, carne alla griglia 🥓 o alternative vegetariane 🥑🫘.',
         'Relax time sugli atolli e tutto il tempo per nuotare.',
         'Alle ore 15:00 partenza 🛺 per il rientro a Watamu previsto per le <strong>16:00</strong> circa.'
