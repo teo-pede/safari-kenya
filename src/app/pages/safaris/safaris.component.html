@@ -35,7 +35,9 @@
 
         <div *ngFor="let safari of safarisWatamu" class="flex flex-col bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-900 dark:border-gray-700">
             <button class="w-full" (click)="openModal(safari.varName + 'Modal')">
-                <img class="h-72 sm:h-80 object-none w-full rounded-t-lg hover:scale-110 transition duration-500" src="{{ safari.imgFolder + safari.thumbnail }}" alt="" />
+                <div class="relative h-72 sm:h-80 overflow-hidden rounded-t-lg">
+                    <img class="absolute -top-2 block w-full rounded-t-lg hover:scale-110 transition duration-500" src="{{ safari.imgFolder + safari.thumbnail }}" alt="" />
+                </div>
             </button>
             <div class="px-5 pt-5">
                 <button (click)="openModal(safari.varName + 'Modal')" class="text-left">
