@@ -69,21 +69,53 @@
     
     </div>
 </section>
-<section #safariNairobi class="bg-orange-50 dark:bg-zinc-800 bg-blend-multiply">
-    <h2 class="animate-fade-in-up text-center py-10 relative z-10 mb-4 text-4xl font-bold leading-none text-gray-900 lg:text-5xl dark:text-white">Safari da Nairobi</h2>
+<section class="bg-orange-50 dark:bg-zinc-800 bg-blend-multiply">
+    <h2 #safariNairobi class="animate-fade-in-up text-center py-10 relative z-10 mb-4 text-4xl font-bold leading-none text-gray-900 lg:text-5xl dark:text-white">Safari da Nairobi</h2>
     <p class="text-gray-800 dark:text-gray-400 text-center px-16 pb-6">
         Questi i <strong>SAFARI</strong> per chi parte da <strong>Nairobi</strong>.
     </p>
     <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 px-12 py-12 max-w-6xl mx-auto">
 
-
+        <div *ngFor="let safariNairo of safarisNairoby" class="flex flex-col bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-900 dark:border-gray-700">
+            <button class="w-full" (click)="openModal(safariNairo.varName + 'Modal')">
+                <div class="relative h-72 sm:h-80 overflow-hidden rounded-t-lg">
+                    <img class="absolute -top-2 block w-full rounded-t-lg hover:scale-110 transition duration-500" src="{{ safariNairo.imgFolder + safariNairo.thumbnail }}" alt="" />
+                </div>
+            </button>
+            <div class="px-5 pt-5">
+                <button (click)="openModal(safariNairo.varName + 'Modal')" class="text-left">
+                    <h5 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ safariNairo.title }}</h5>
+                    <h6 class="mb-2 text-lg font-bold tracking-tight text-gray-700 dark:text-gray-300">{{ safariNairo.duration | lowercase }}</h6>
+                </button>
+                <div class="flex items-center text-gray-400 pb-3">
+                    <svg class="w-4 h-4 mr-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.8159 20.6077C16.8509 18.5502 20 15.1429 20 11C20 6.58172 16.4183 3 12 3C7.58172 3 4 6.58172 4 11C4 15.1429 7.14909 18.5502 11.1841 20.6077C11.6968 20.8691 12.3032 20.8691 12.8159 20.6077Z" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M15 11C15 12.6569 13.6569 14 12 14C10.3431 14 9 12.6569 9 11C9 9.34315 10.3431 8 12 8C13.6569 8 15 9.34315 15 11Z" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    {{ safariNairo.place }}
+                </div>
+            </div>
+            <div class="mt-auto mb-0 px-5 pb-5">
+                <hr class="my-3 border-gray-200 sm:mx-auto dark:border-gray-700" />
+                <div class="flex justify-items-end">
+                    <span *ngIf="safariNairo.price != ''" class="items-center inline-flex text-md font-semibold text-gray-900 dark:text-white ml-0 mr-1">da </span>
+                    <span class="items-center inline-flex text-xl font-bold text-amber-600 text-left ml-0 mr-auto">{{ safariNairo.price }}</span>
+                    <button (click)="openModal(safariNairo.varName + 'Modal')" class="inline-flex items-center px-3 py-2 mr-0 ml-auto text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        Info
+                        <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
     
     </div>
 
 </section>
 
 
-<div *ngFor="let safariDetail of safarisWatamu" id="{{ safariDetail.varName + '-modal' }}" tabindex="-1" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+<div *ngFor="let safariDetail of safarisWatamu.concat(safarisNairoby)" id="{{ safariDetail.varName + '-modal' }}" tabindex="-1" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
     <div class="relative w-full max-w-7xl max-h-full">
         <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
             <div class="absolute top-4 right-14">
