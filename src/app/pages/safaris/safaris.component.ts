@@ -1,7 +1,9 @@
 import { Component,  OnInit, OnDestroy, AfterViewInit } from '@angular/core';
 import { Modal, Carousel, Accordion } from 'flowbite';
 import type { ModalOptions, ModalInterface, CarouselItem, CarouselOptions, CarouselInterface, 
-              AccordionOptions, AccordionItem, AccordionInterface } from 'flowbite'
+              AccordionOptions, AccordionItem, AccordionInterface } from 'flowbite';
+import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-safaris',
@@ -9,6 +11,17 @@ import type { ModalOptions, ModalInterface, CarouselItem, CarouselOptions, Carou
   styleUrls: ['./safaris.component.css']
 })
 export class SafarisComponent implements OnInit, OnDestroy, AfterViewInit {
+
+  modalOpen = false
+
+  canDeactivate(): Observable<boolean> | boolean {
+    // Allow synchronous navigation (`true`) if no modal open
+    if (!this.modalOpen ) {
+      return true;
+    }
+    this.closeAllModal()
+    return false
+  }
 
   scroll(el: HTMLElement) {
     el.scrollIntoView();
@@ -505,8 +518,8 @@ export class SafarisComponent implements OnInit, OnDestroy, AfterViewInit {
       backdrop: 'dynamic',
       backdropClasses: 'bg-gray-900 bg-opacity-50 dark:bg-opacity-80 fixed inset-0 z-40',
       closable: true,
-      onHide: () => {},
-      onShow: () => {},
+      onHide: () => { this.modalOpen = false },
+      onShow: () => { this.modalOpen = true },
       onToggle: () => {}
     }
     this.safarisWatamu.concat(this.safarisNairoby).forEach( (safari) => {
@@ -576,6 +589,7 @@ export class SafarisComponent implements OnInit, OnDestroy, AfterViewInit {
     this.safarisWatamu.concat(this.safarisNairoby).forEach( (modal) => {
       this.closeModal(modal.varName + 'Modal')
     })
+    this.modalOpen = false
   }
 
   openModal(modalName: string): void{

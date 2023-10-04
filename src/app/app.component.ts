@@ -9,7 +9,7 @@ import { initFlowbite } from 'flowbite';
 })
 export class AppComponent implements OnInit{
   title = 'safari-kenya';
-
+  
   ngOnInit(): void {
     initFlowbite();
   }

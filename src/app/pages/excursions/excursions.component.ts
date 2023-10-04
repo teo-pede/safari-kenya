@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
 import { Modal, Carousel } from 'flowbite';
-import type { ModalOptions, ModalInterface, CarouselItem, CarouselOptions, CarouselInterface } from 'flowbite'
+import type { ModalOptions, ModalInterface, CarouselItem, CarouselOptions, CarouselInterface } from 'flowbite';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-excursions',
@@ -9,6 +10,18 @@ import type { ModalOptions, ModalInterface, CarouselItem, CarouselOptions, Carou
 })
 export class ExcursionsComponent implements OnInit, OnDestroy, AfterViewInit{
   [key: string]: any;
+
+  modalOpen = false
+
+  canDeactivate(): Observable<boolean> | boolean {
+    // Allow synchronous navigation (`true`) if no modal open
+    if (!this.modalOpen ) {
+      return true;
+    }
+    this.closeAllModal()
+    this.modalOpen = false
+    return false
+  }
 
   excurions =[
     { 
@@ -363,8 +376,8 @@ export class ExcursionsComponent implements OnInit, OnDestroy, AfterViewInit{
       backdrop: 'dynamic',
       backdropClasses: 'bg-gray-900 bg-opacity-50 dark:bg-opacity-80 fixed inset-0 z-40',
       closable: true,
-      onHide: () => {},
-      onShow: () => {},
+      onHide: () => { this.modalOpen = false },
+      onShow: () => { this.modalOpen = true },
       onToggle: () => {}
     }
     this.excurions.forEach( (excur) => {
