@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { NgOptimizedImage } from '@angular/common'
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -26,7 +27,8 @@ import { ExcursionsComponent } from './pages/excursions/excursions.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgOptimizedImage
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, HostListener } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild, ElementRef, HostListener } from '@angular/core';
 import { Carousel, Popover } from "flowbite";
 import type { CarouselItem, CarouselOptions, CarouselInterface, PopoverOptions, PopoverInterface } from "flowbite";
 
@@ -7,8 +7,10 @@ import type { CarouselItem, CarouselOptions, CarouselInterface, PopoverOptions, 
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.css']
 })
-export class AboutComponent implements OnInit {
+export class AboutComponent implements OnInit, AfterViewInit {
 
+  friendsImgs = ['friend_1.jpeg','friend_2.jpeg','friend_3.jpeg','friend_4.jpeg','friend_5.jpeg','friend_6.jpeg','friend_7.jpeg','friend_8.jpeg','friend_9.jpeg','friend_10.jpeg','friend_11.jpeg','friend_12.jpeg','friend_13.jpeg','friend_14.jpeg','friend_15.jpeg','friend_16.jpeg','friend_17.jpeg','friend_18.jpeg','friend_19.jpeg']
+  friendsImgFolder = '/assets/img/friends/'
   friendCount = 0;
   countIsRunning = false;
   resetted = true;
@@ -55,8 +57,11 @@ export class AboutComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.setCarousel();
     this.enablePopOver();
+  }
+
+  ngAfterViewInit(): void {
+    this.setCarousel();
   }
 
   enablePopOver(): void{
