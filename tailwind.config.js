@@ -46,14 +46,14 @@ module.exports = {
           '100%': { opacity: 1, transform: 'translateX(0)' }
         },
         bounceInRight: {
-          '0%': { opacity: 0, transform: 'translateX(30px)' },
-          '50%': { opacity: 1, transform: 'translateX(-20px)' },
+          '0%': { opacity: 0, transform: 'translateX(1000px)' },
+          '50%': { opacity: 1, transform: 'translateX(-30px)' },
           '70%': { transform: 'translateX(10px)' },
           '100%': { transform: 'translateX(0)' }
         },
         bounceInLeft: {
-          '0%': { opacity: 0, transform: 'translateX(-30px)' },
-          '50%': { opacity: 1, transform: 'translateX(20px)' },
+          '0%': { opacity: 0, transform: 'translateX(-1000px)' },
+          '50%': { opacity: 1, transform: 'translateX(30px)' },
           '70%': { transform: 'translateX(-10px)' },
           '100%': { transform: 'translateX(0)' }
         },
