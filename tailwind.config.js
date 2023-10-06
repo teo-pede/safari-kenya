@@ -57,6 +57,11 @@ module.exports = {
           '80%': { transform: 'translateX(-10px)' },
           '100%': { transform: 'translateX(0)' }
         },
+        growMy: {
+          '0%': { transform: 'scale(0)' },
+          '80%': { transform: 'scale(1.1)' },
+          '100%': { transform: 'scale(1)' }
+        }
       },
       animation: {
         'fade-in-left': 'fadeInLeft 1s ease-in-out 1',
@@ -64,7 +69,8 @@ module.exports = {
         'fade-in-up': 'fadeInUp 1s ease-in-out 1',
         'fade-in-down': 'fadeInDown 1s ease-in-out 1',
         'bounce-in-right': 'bounceInRight 2s ease 1',
-        'bounce-in-left': 'bounceInLeft 2s ease 1'
+        'bounce-in-left': 'bounceInLeft 2s ease 1',
+        'grow-my': 'growMy 1s ease 1'
       },
     },
   },
