@@ -1,11 +1,11 @@
-import { Component, OnInit, ViewChild, ElementRef, HostListener  } from '@angular/core';
+import { Component, ViewChild, ElementRef, HostListener, AfterViewInit  } from '@angular/core';
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css']
 })
-export class ContactComponent implements OnInit {
+export class ContactComponent implements AfterViewInit {
 
   @ViewChild('phoneDiv', { static: false })
   private phoneDiv: ElementRef<HTMLDivElement>|undefined;
@@ -59,47 +59,8 @@ export class ContactComponent implements OnInit {
     }
   }
 
-  ngOnInit(): void {
-    this.isOnLoadIntoView()
-  }
-
-  isOnLoadIntoView():void {
-    const phone = <HTMLElement>document.getElementById('phoneDiv');
-    if (phone && !this.phoneDone) {
-      const rectPhone = phone.getBoundingClientRect();
-      if (rectPhone.top >= 0 && rectPhone.bottom-200 <= window.innerHeight){
-        phone.classList.remove('opacity-0')
-        phone.classList.add('animate-fade-in-left')
-        this.phoneDone = true
-      }
-    }
-    const email = <HTMLElement>document.getElementById('emailDiv');
-    if (email && !this.emailDone) {
-      const rectPhone = email.getBoundingClientRect();
-      if (rectPhone.top >= 0 && rectPhone.bottom-200 <= window.innerHeight){
-        email.classList.remove('opacity-0')
-        email.classList.add('animate-fade-in-up')
-        this.emailDone = true
-      }
-    }
-    const hour = <HTMLElement>document.getElementById('hourDiv');
-    if (hour && !this.hourDone) {
-      const rectPhone = hour.getBoundingClientRect();
-      if (rectPhone.top >= 0 && rectPhone.bottom-200 <= window.innerHeight){
-        hour.classList.remove('opacity-0')
-        hour.classList.add('animate-fade-in-right')
-        this.hourDone = true
-      }
-    }
-    const address = <HTMLElement>document.getElementById('addressDiv');
-    if (address && !this.addressDone) {
-      const rectPhone = address.getBoundingClientRect();
-      if (rectPhone.top >= 0 && rectPhone.bottom-200 <= window.innerHeight){
-        address.classList.remove('opacity-0')
-        address.classList.add('animate-fade-in-down')
-        this.addressDone = true
-      }
-    }
+  ngAfterViewInit(): void {
+    this.isScrolledIntoView();
   }
 
 }
