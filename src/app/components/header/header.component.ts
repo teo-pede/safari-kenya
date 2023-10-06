@@ -29,7 +29,7 @@ export class HeaderComponent implements OnInit, OnDestroy{
     router.events.subscribe(e => {
       this.closeNavbar()
       if (e instanceof NavigationEnd){
-        this.isHome = e.urlAfterRedirects.startsWith('/#') || e.urlAfterRedirects == '/'
+        this.isHome = e.urlAfterRedirects.startsWith('/#') || e.urlAfterRedirects.startsWith('/?') || e.urlAfterRedirects == '/'
       }
     });
   }

@@ -10,6 +10,14 @@ export class HomePageComponent implements OnInit {
 
   friendInterval:any = setInterval(() => {}, 1);
 
+  @ViewChild('safaris', { static: false })
+  private safaris: ElementRef<HTMLDivElement>|undefined;
+  private safarisDone = false;
+
+  @ViewChild('excursions', { static: false })
+  private excursions: ElementRef<HTMLDivElement>|undefined;
+  private excursionsDone = false;
+
   private friendImgDone = false;
 
   @ViewChild('homeImg1', { static: false })
@@ -20,6 +28,19 @@ export class HomePageComponent implements OnInit {
 
   @ViewChild('friendsNum', { static: false })
   private friendsNum: ElementRef<HTMLDivElement>|undefined;
+
+  @ViewChild('guide', { static: false })
+  private guide: ElementRef<HTMLDivElement>|undefined;
+  private guideDone = false;
+
+  @ViewChild('tickets', { static: false })
+  private tickets: ElementRef<HTMLDivElement>|undefined;
+  private ticketsDone = false;
+
+  @ViewChild('support', { static: false })
+  private support: ElementRef<HTMLDivElement>|undefined;
+  private supportDone = false;
+
 
   @HostListener('window:scroll', ['$event'])
   isScrolledIntoView() {
@@ -39,6 +60,46 @@ export class HomePageComponent implements OnInit {
             clearInterval(this.friendInterval);
           }
         }, 1)
+      }
+    }
+    if(this.guide && !this.guideDone){
+      const rectGuide = this.guide.nativeElement.getBoundingClientRect();
+      if (rectGuide.top >= 0 && rectGuide.bottom-100 <= window.innerHeight){
+        this.guide.nativeElement.classList.remove('opacity-0')
+        this.guide.nativeElement.classList.add('animate-fade-in-up')
+        this.guideDone = true
+      }
+    }
+    if(this.tickets && !this.ticketsDone){
+      const rectTickets = this.tickets.nativeElement.getBoundingClientRect();
+      if (rectTickets.top >= 0 && rectTickets.bottom-100 <= window.innerHeight){
+        this.tickets.nativeElement.classList.remove('opacity-0')
+        this.tickets.nativeElement.classList.add('animate-fade-in-left')
+        this.ticketsDone = true
+      }
+    }
+    if(this.support && !this.supportDone){
+      const rectSupport = this.support.nativeElement.getBoundingClientRect();
+      if (rectSupport.top >= 0 && rectSupport.bottom-100 <= window.innerHeight){
+        this.support.nativeElement.classList.remove('opacity-0')
+        this.support.nativeElement.classList.add('animate-fade-in-up')
+        this.supportDone = true
+      }
+    }
+    if(this.safaris && !this.safarisDone){
+      const rectSafaris = this.safaris.nativeElement.getBoundingClientRect();
+      if (rectSafaris.top >= 0 && rectSafaris.bottom-50 <= window.innerHeight){
+        this.safaris.nativeElement.classList.remove('opacity-0')
+        this.safaris.nativeElement.classList.add('animate-bounce-in-right')
+        this.safarisDone = true
+      }
+    }
+    if(this.excursions && !this.excursionsDone){
+      const rectExcursions = this.excursions.nativeElement.getBoundingClientRect();
+      if (rectExcursions.top >= 0 && rectExcursions.bottom-50 <= window.innerHeight){
+        this.excursions.nativeElement.classList.remove('opacity-0')
+        this.excursions.nativeElement.classList.add('animate-bounce-in-left')
+        this.excursionsDone = true
       }
     }
   }
