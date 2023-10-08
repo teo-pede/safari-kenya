@@ -4,6 +4,7 @@ import type { ModalOptions, ModalInterface, CarouselItem, CarouselOptions, Carou
               AccordionOptions, AccordionItem, AccordionInterface } from 'flowbite';
 import { Observable } from 'rxjs';
 import { DataService } from '../../data.service';
+import { ViewportScroller } from "@angular/common";
 
 
 @Component({
@@ -13,7 +14,7 @@ import { DataService } from '../../data.service';
 })
 export class SafarisComponent implements OnInit, OnDestroy, AfterViewInit {
 
-  constructor(private modalService: DataService) { }
+  constructor(private modalService: DataService, private scroller?: ViewportScroller) { }
 
   fromOtherComp = false
   modalOpen = false
@@ -615,7 +616,8 @@ export class SafarisComponent implements OnInit, OnDestroy, AfterViewInit {
       modal.hide()
       if (this.fromOtherComp){
         this.fromOtherComp = false
-        this.scroll(<HTMLElement>document.getElementById('grid-'+modalName.replace('Modal','')))
+        //this.scroll(<HTMLElement>document.getElementById('grid-'+modalName.replace('Modal','')))
+        this.scroller?.scrollToAnchor('grid-'+modalName.replace('Modal',''))
       }
     }
   }
