@@ -27,7 +27,7 @@ export class ExcursionsComponent implements OnInit, OnDestroy, AfterViewInit{
 
   scroll(el: HTMLElement) {
     if(el)
-    el.scrollIntoView();
+    el.scrollIntoView({ behavior: "smooth" });
   }
 
   excurions =[

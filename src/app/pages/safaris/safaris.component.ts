@@ -29,7 +29,7 @@ export class SafarisComponent implements OnInit, OnDestroy, AfterViewInit {
 
   scroll(el: HTMLElement) {
     if(el)
-    el.scrollIntoView();
+    el.scrollIntoView({ behavior: "smooth" });
   }
 
   private modals = new Map<string, ModalInterface>();
