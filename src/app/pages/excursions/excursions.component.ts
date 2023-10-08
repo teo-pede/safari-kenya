@@ -19,7 +19,6 @@ export class ExcursionsComponent implements OnInit, OnDestroy, AfterViewInit{
       return true;
     }
     this.closeAllModal()
-    this.modalOpen = false
     return false
   }
 
@@ -368,6 +367,7 @@ export class ExcursionsComponent implements OnInit, OnDestroy, AfterViewInit{
     this.excurions.forEach( (modal) => {
       this.closeModal(modal.varName + 'Modal')
     })
+    this.modalOpen = false
   }
 
   enableAllModalAllCarousel(): void{

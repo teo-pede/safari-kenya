@@ -9,7 +9,7 @@ import { ExcursionsComponent } from './pages/excursions/excursions.component';
 import { canDeactivateGuard } from './can-deactivate.guard'
 
 const routes: Routes = [
-  { path: '', component: HomePageComponent },
+  { path: '', component: HomePageComponent, canDeactivate: [canDeactivateGuard] },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'faq', component: FaqComponent },
