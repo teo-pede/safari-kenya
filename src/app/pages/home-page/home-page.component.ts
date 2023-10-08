@@ -1,36 +1,20 @@
-import { Component, AfterViewInit, OnDestroy, HostListener, ViewChild, ElementRef } from '@angular/core';
-import { Modal, Carousel, Accordion } from 'flowbite';
-import type { ModalOptions, ModalInterface, CarouselItem, CarouselOptions, CarouselInterface, 
-              AccordionOptions, AccordionItem, AccordionInterface } from 'flowbite';
-import { Observable } from 'rxjs';
+import { Component, AfterViewInit, HostListener, ViewChild, ElementRef } from '@angular/core';
+import { Router } from '@angular/router';
 import { SafarisComponent } from '../safaris/safaris.component';
 import { ExcursionsComponent } from '../excursions/excursions.component';
+import { DataService } from '../../data.service';
 
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.scss']
 })
-export class HomePageComponent implements AfterViewInit, OnDestroy {
+export class HomePageComponent implements AfterViewInit {
 
-  modalOpen = false
-  private modals = new Map<string, ModalInterface>();
+  constructor(private modalService: DataService, private router: Router) { }
 
-  canDeactivate(): Observable<boolean> | boolean {
-    // Allow synchronous navigation (`true`) if no modal open
-    if (!this.modalOpen ) {
-      return true;
-    }
-    this.closeAllModal()
-    return false
-  }
-
-  scroll(el: HTMLElement) {
-    el.scrollIntoView();
-  }
-
-  readonly safComp = new SafarisComponent()
-  readonly excComp = new ExcursionsComponent()
+  readonly safComp = new SafarisComponent(this.modalService)
+  readonly excComp = new ExcursionsComponent(this.modalService)
 
   randExcursions = this.excComp.excurions.sort(() => Math.random() - Math.random()).slice(0,7)
   randSafaris = this.safComp.safarisWatamu.concat(this.safComp.safarisNairoby).sort(() => Math.random() - Math.random()).slice(0,7)
@@ -142,11 +126,6 @@ export class HomePageComponent implements AfterViewInit, OnDestroy {
 
   ngAfterViewInit(): void {
     this.isScrolledIntoView();
-    this.enableAllModalAllCarousel();
-  }
-
-  ngOnDestroy(): void {
-    this.closeAllModal();
   }
 
   carouselOnclick(event: any, carouselName: string){
@@ -189,137 +168,13 @@ export class HomePageComponent implements AfterViewInit, OnDestroy {
     return diff.toString();
   }
 
-  enableAllModalAllCarousel(): void{
-    const modalOptions: ModalOptions = {
-      placement: 'top-center',
-      backdrop: 'dynamic',
-      backdropClasses: 'bg-gray-900 bg-opacity-50 dark:bg-opacity-80 fixed inset-0 z-40',
-      closable: true,
-      onHide: () => { this.modalOpen = false },
-      onShow: () => { this.modalOpen = true },
-      onToggle: () => {}
-    }
-    this.randSafaris.forEach( (safari) => {
-      const element = <HTMLElement>document.getElementById(safari.varName + '-modal');
-      const modalEl: ModalInterface = new Modal(element, modalOptions);
-      this.modals.set(safari.varName+'Modal', modalEl);
-
-      var items: CarouselItem[] = []
-      var optionItem = []
-      for(let i=1; i <= safari.imgsArray.length; i++){
-        items.push({ position: i-1, el: <HTMLElement>document.getElementById('carousel-' + safari.varName + '-item-' + i) });
-        optionItem.push({ position: i-1, el: <HTMLElement>document.getElementById('carousel-' + safari.varName + '-indicator-' + i) })
-      }
-      var options: CarouselOptions = {
-        defaultPosition: 1,
-        interval: 3000,
-        indicators: {
-          activeClasses: 'bg-white dark:bg-gray-800',
-          inactiveClasses: 'bg-white/50 dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800',
-          items: optionItem
-        },
-        onNext: () => {},
-        onPrev: () => {},
-        onChange: () => {}
-      }
-      var carouselHtml: CarouselInterface = new Carousel(items, options);
-      var prevButton = <HTMLElement>document.getElementById('carousel-' + safari.varName + '-prev');
-      var nextButton = <HTMLElement>document.getElementById('carousel-' + safari.varName + '-next');
-      prevButton.addEventListener('click', () => {
-        carouselHtml.prev();
-      });
-      nextButton.addEventListener('click', () => {
-        carouselHtml.next();
-      });
-
-      const accordionItems: AccordionItem[] = [];
-      for (let index = 1; index <= safari.programs.length; index++) {
-        accordionItems.push(
-          {
-            id: 'accordion-' + safari.varName + '-heading-' + (index),
-            triggerEl: <HTMLElement>document.getElementById('accordion-' + safari.varName + '-heading-' + (index)),
-            targetEl: <HTMLElement>document.getElementById('accordion-' + safari.varName + '-body-' + (index)),
-            active: index == 1 ? true : false
-          });
-      }
-      const optionsAccord: AccordionOptions = {
-        alwaysOpen: false,
-        activeClasses: 'bg-transparent dark:bg-transparent',
-        inactiveClasses: 'bg-gray-300 dark:bg-gray-600',
-        onOpen: (item) => {
-          this.scroll(<HTMLElement>item._items.find( el => el.active)?.triggerEl)
-        },
-        onClose: (item) => { },
-        onToggle: (item) => {
-          item._items.forEach( (el) => {
-            el.triggerEl.querySelectorAll('svg')[1].classList.remove('rotate-180')
-          })
-          item._items.find( el => el.active)?.triggerEl.querySelectorAll('svg')[1].classList.add('rotate-180')
-        },
-      };
-      const accordion: AccordionInterface = new Accordion(accordionItems, optionsAccord);
-      accordion.open('accordion-' + safari.varName + '-heading-1');
-    })
-    this.randExcursions.forEach( (excur) => {
-      const element = <HTMLElement>document.getElementById(excur.varName + '-modal');
-      const modalEl: ModalInterface = new Modal(element, modalOptions);
-      this.modals.set(excur.varName+'Modal', modalEl);
-
-      var items: CarouselItem[] = []
-      var optionItem = []
-      for(let i=1; i <= excur.imgsArray.length; i++){
-        items.push({ position: i-1, el: <HTMLElement>document.getElementById('carousel-' + excur.varName + '-item-' + i) });
-        optionItem.push({ position: i-1, el: <HTMLElement>document.getElementById('carousel-' + excur.varName + '-indicator-' + i) })
-      }
-      var options: CarouselOptions = {
-        defaultPosition: 1,
-        interval: 3000,
-        indicators: {
-          activeClasses: 'bg-white dark:bg-gray-800',
-          inactiveClasses: 'bg-white/50 dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800',
-          items: optionItem
-        },
-        onNext: () => {},
-        onPrev: () => {},
-        onChange: () => {}
-      }
-      var carouselHtml: CarouselInterface = new Carousel(items, options);
-      var prevButton = <HTMLElement>document.getElementById('carousel-' + excur.varName + '-prev');
-      var nextButton = <HTMLElement>document.getElementById('carousel-' + excur.varName + '-next');
-      prevButton.addEventListener('click', () => {
-        carouselHtml.prev();
-      });
-      nextButton.addEventListener('click', () => {
-        carouselHtml.next();
-      });
-    })
-  }
-
   openModal(event: any, modalName: string, carouselName: string): void{
     const carouselItem = <HTMLElement>event.target.closest('.' + carouselName + '__item')
     if(carouselItem.classList.contains('carousel__item_active')){
-      var modal = this.modals.get(modalName)
-      if (modal){
-        modal.show()
-      }
+      this.modalService.setModalName(modalName)
+      if(carouselName == 'carousel') this.router.navigateByUrl('/safaris')
+      else this.router.navigateByUrl('/excursions')
     }
-  }
-
-  closeModal(modalName: string): void{
-    var modal = this.modals.get(modalName)
-    if (modal){
-      modal.hide()
-    }
-  }
-
-  closeAllModal(): void{
-    this.randSafaris.forEach( (modal) => {
-      this.closeModal(modal.varName + 'Modal')
-    })
-    this.randExcursions.forEach( (modal) => {
-      this.closeModal(modal.varName + 'Modal')
-    })
-    this.modalOpen = false
   }
 
 }

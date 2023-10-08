@@ -19,7 +19,7 @@
     </p>
     <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 px-12 py-12 max-w-6xl mx-auto">
 
-        <div *ngFor="let safari of safarisWatamu" class="flex flex-col bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-900 dark:border-gray-700">
+        <div id="{{ 'grid-' + safari.varName }}" *ngFor="let safari of safarisWatamu" class="flex flex-col bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-900 dark:border-gray-700">
             <button class="w-full" (click)="openModal(safari.varName + 'Modal')">
                 <div class="relative h-72 sm:h-80 overflow-hidden rounded-t-lg">
                     <img class="absolute -top-2 block w-full rounded-t-lg hover:scale-110 transition duration-500" ngSrc="{{ safari.imgFolder + safari.thumbnail }}" alt="" sizes="(max-width: 768px) 100vw, 50vw" fill priority/>
@@ -62,7 +62,7 @@
     </p>
     <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 px-12 py-12 max-w-6xl mx-auto">
 
-        <div *ngFor="let safariNairo of safarisNairoby" class="flex flex-col bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-900 dark:border-gray-700">
+        <div id="{{ 'grid-' + safariNairo.varName }}" *ngFor="let safariNairo of safarisNairoby" class="flex flex-col bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-900 dark:border-gray-700">
             <button class="w-full" (click)="openModal(safariNairo.varName + 'Modal')">
                 <div class="relative h-72 sm:h-80 overflow-hidden rounded-t-lg">
                     <img class="absolute -top-2 block w-full rounded-t-lg hover:scale-110 transition duration-500" ngSrc="{{ safariNairo.imgFolder + safariNairo.thumbnail }}" alt="" sizes="(max-width: 768px) 100vw, 50vw" fill priority/>

@@ -12,6 +12,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { FaqComponent } from './pages/faq/faq.component';
 import { SafarisComponent } from './pages/safaris/safaris.component';
 import { ExcursionsComponent } from './pages/excursions/excursions.component';
+import { DataService } from './data.service'
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { ExcursionsComponent } from './pages/excursions/excursions.component';
     AppRoutingModule,
     NgOptimizedImage
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

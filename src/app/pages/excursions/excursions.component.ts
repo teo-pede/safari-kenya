@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
 import { Modal, Carousel } from 'flowbite';
 import type { ModalOptions, ModalInterface, CarouselItem, CarouselOptions, CarouselInterface } from 'flowbite';
 import { Observable } from 'rxjs';
+import { DataService } from '../../data.service';
 
 @Component({
   selector: 'app-excursions',
@@ -9,8 +10,10 @@ import { Observable } from 'rxjs';
   styleUrls: ['./excursions.component.css']
 })
 export class ExcursionsComponent implements OnInit, OnDestroy, AfterViewInit{
-  [key: string]: any;
+  
+  constructor(private modalService: DataService) { }
 
+  fromOtherComp = false
   modalOpen = false
 
   canDeactivate(): Observable<boolean> | boolean {
@@ -20,6 +23,11 @@ export class ExcursionsComponent implements OnInit, OnDestroy, AfterViewInit{
     }
     this.closeAllModal()
     return false
+  }
+
+  scroll(el: HTMLElement) {
+    if(el)
+    el.scrollIntoView();
   }
 
   excurions =[
@@ -357,6 +365,11 @@ export class ExcursionsComponent implements OnInit, OnDestroy, AfterViewInit{
 
   ngAfterViewInit(): void {
     this.enableAllModalAllCarousel();
+    if(this.modalService.getModalName()!=''){
+      this.fromOtherComp = true
+      this.openModal(this.modalService.getModalName())
+      this.modalService.setModalName('')
+    }
   }
 
   ngOnDestroy(): void {
@@ -423,8 +436,12 @@ export class ExcursionsComponent implements OnInit, OnDestroy, AfterViewInit{
   }
   closeModal(modalName: string): void{
     var modal = this.modals.get(modalName)
-    if (modal){
+    if (modal && modal.isVisible()){
       modal.hide()
+      if (this.fromOtherComp){
+        this.fromOtherComp = false
+        this.scroll(<HTMLElement>document.getElementById('grid-'+modalName.replace('Modal','')))
+      }
     }
   }
 
