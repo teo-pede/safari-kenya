@@ -88,7 +88,7 @@ export class AboutComponent implements OnInit, AfterViewInit {
       itemsOpt.push({ position: i, el: <HTMLElement>document.getElementById('carousel-indicator-' + (i+1)) })
     }
     const options: CarouselOptions = {
-      defaultPosition: 1,
+      defaultPosition: 0,
       interval: 3000,
       indicators: {
           activeClasses: 'bg-white dark:bg-gray-800',

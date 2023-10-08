@@ -14,10 +14,13 @@ import { ViewportScroller } from "@angular/common";
 })
 export class SafarisComponent implements OnInit, OnDestroy, AfterViewInit {
 
-  constructor(private modalService: DataService, private scroller?: ViewportScroller) { }
-
-  fromOtherComp = false
+  modalNameFromOther: string
   modalOpen = false
+
+  constructor(private modalService: DataService, private scroller?: ViewportScroller) { 
+    this.modalNameFromOther = this.modalService.getModalName()
+    this.modalService.setModalName('')
+  }
 
   canDeactivate(): Observable<boolean> | boolean {
     // Allow synchronous navigation (`true`) if no modal open
@@ -512,10 +515,8 @@ export class SafarisComponent implements OnInit, OnDestroy, AfterViewInit {
 
   ngAfterViewInit(): void {
     this.enableAllModalAllCarousel();
-    if(this.modalService.getModalName()!=''){
-      this.fromOtherComp = true
-      this.openModal(this.modalService.getModalName())
-      this.modalService.setModalName('')
+    if(this.modalNameFromOther != ''){
+      this.openModal(this.modalNameFromOther)
     }
   }
 
@@ -545,7 +546,7 @@ export class SafarisComponent implements OnInit, OnDestroy, AfterViewInit {
         optionItem.push({ position: i-1, el: <HTMLElement>document.getElementById('carousel-' + safari.varName + '-indicator-' + i) })
       }
       var options: CarouselOptions = {
-        defaultPosition: 1,
+        defaultPosition: 0,
         interval: 3000,
         indicators: {
           activeClasses: 'bg-white dark:bg-gray-800',
@@ -614,9 +615,8 @@ export class SafarisComponent implements OnInit, OnDestroy, AfterViewInit {
     var modal = this.modals.get(modalName)
     if (modal && modal.isVisible()){
       modal.hide()
-      if (this.fromOtherComp){
-        this.fromOtherComp = false
-        //this.scroll(<HTMLElement>document.getElementById('grid-'+modalName.replace('Modal','')))
+      if (this.modalNameFromOther != ''){
+        this.modalNameFromOther = ''
         this.scroller?.scrollToAnchor('grid-'+modalName.replace('Modal',''))
       }
     }

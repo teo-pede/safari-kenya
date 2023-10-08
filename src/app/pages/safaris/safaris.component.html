@@ -22,7 +22,7 @@
         <div id="{{ 'grid-' + safari.varName }}" *ngFor="let safari of safarisWatamu" class="flex flex-col bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-900 dark:border-gray-700">
             <button class="w-full" (click)="openModal(safari.varName + 'Modal')">
                 <div class="relative h-72 sm:h-80 overflow-hidden rounded-t-lg">
-                    <img class="absolute -top-2 block w-full rounded-t-lg hover:scale-110 transition duration-500" ngSrc="{{ safari.imgFolder + safari.thumbnail }}" alt="" sizes="(max-width: 768px) 100vw, 50vw" fill priority/>
+                    <img class="absolute -top-2 block w-full rounded-t-lg hover:scale-110 transition duration-500" ngSrc="{{ safari.imgFolder + safari.thumbnail }}" alt="" sizes="(max-width: 768px) 100vw, 50vw" fill [priority]="modalNameFromOther == ''"/>
                 </div>
             </button>
             <div class="px-5 pt-5">
@@ -65,7 +65,7 @@
         <div id="{{ 'grid-' + safariNairo.varName }}" *ngFor="let safariNairo of safarisNairoby" class="flex flex-col bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-900 dark:border-gray-700">
             <button class="w-full" (click)="openModal(safariNairo.varName + 'Modal')">
                 <div class="relative h-72 sm:h-80 overflow-hidden rounded-t-lg">
-                    <img class="absolute -top-2 block w-full rounded-t-lg hover:scale-110 transition duration-500" ngSrc="{{ safariNairo.imgFolder + safariNairo.thumbnail }}" alt="" sizes="(max-width: 768px) 100vw, 50vw" fill priority/>
+                    <img class="absolute -top-2 block w-full rounded-t-lg hover:scale-110 transition duration-500" ngSrc="{{ safariNairo.imgFolder + safariNairo.thumbnail }}" alt="" sizes="(max-width: 768px) 100vw, 50vw" fill [priority]="modalNameFromOther == ''"/>
                 </div>
             </button>
             <div class="px-5 pt-5">
@@ -168,7 +168,7 @@
                         <div class="relative items-center h-72 sm:h-96 lg:h-[28rem] px-6">
                             <div class="relative h-72 overflow-hidden rounded-lg sm:h-96 lg:h-[28rem]">
                                 <div *ngFor="let excursionImage of safariDetail.imgsArray; let i = 'index+1'" class="hidden duration-700 ease-in-out" id="{{'carousel-'+safariDetail.varName+'-item-'+i}}">
-                                    <img loading="lazy" src="{{ safariDetail.imgFolder + excursionImage }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                                    <img [attr.loading]="safariDetail.varName+'Modal' == modalNameFromOther && i == 1 ? 'eager' : 'lazy'" src="{{ safariDetail.imgFolder + excursionImage }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                 </div>
                             </div>
                             <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
